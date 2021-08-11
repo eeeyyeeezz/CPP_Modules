@@ -1,6 +1,6 @@
 #include "header.hpp"
 
-int		main(int argc, char **argv)
+int		main()
 {
 	phonebook	phonebook;
 	contacts	contacts;
@@ -8,10 +8,9 @@ int		main(int argc, char **argv)
 	
 	while (1){
 		std::cout << GREEN << "Enter command: " << NORMAL;
-		std::getline(std::cin, str);
-		if (checkString(contacts, phonebook, str) == 0)
+		std::cin >> str;
+		if (!checkString(contacts, phonebook, str))
 			break ;
-		// phonebook.setPhonebook(contacts, i);
 	}
 	return (0);
 }

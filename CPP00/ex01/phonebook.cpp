@@ -31,7 +31,4 @@ void			phonebook::printContactInfo(const int index)
 	std::cout << YELLOW << "Nickname name: " << NORMAL << this->contactArray[index].getFirstName() << std::endl;
 	std::cout << YELLOW << "PhoneNumber name: " << NORMAL << this->contactArray[index].getFirstName() << std::endl;
 	std::cout << YELLOW << "Darkest... secret: " << NORMAL << this->contactArray[index].getFirstName() << std::endl;
-	
-
-
 }

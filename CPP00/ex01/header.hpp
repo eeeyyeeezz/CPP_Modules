@@ -41,7 +41,7 @@ class contacts{
 
 class phonebook{
 	private:
-	contacts contactArray[8];
+	contacts contactArray[9];
 	
 	public:
 	phonebook(void);
