@@ -4,7 +4,6 @@
 # include <iostream>
 # include <string>
 # include <stdio.h>
-using namespace std;
 
 #define RED "\033[1;31m"
 #define BLUE "\033[1;34m"
@@ -13,17 +12,43 @@ using namespace std;
 #define GREEN "\033[1;32m"
 #define PURPLE "\033[1;35m"
 #define GRAY "\033[1;30m"
-#define NORMAL "\033[1m"
+#define NORMAL "\033[0m"
 #define MARK "U+2713"
+
+class contacts{
+	private:
+	std::string	first_name;
+	std::string	last_name;
+	std::string	nickname;
+	std::string	phone_number;
+	std::string	darkest_secret;
+	
+	public:
+	// contacts(void);
+	// ~contacts(void);
+	void setFirstName(std::string first_name);
+	void setLastName(std::string last_name);
+	void setNickname(std::string nickname);
+	void setPhonenumber(std::string phonenuber);
+	void setDarkestSecret(std::string darkest_secret);
+	std::string getFirstName();
+	std::string getLastName();
+	std::string getNickname();
+	std::string getPhonenumber();
+	std::string getDarkestSecret();
+};
 
 class phonebook{
 	private:
+	contacts contactArray[8];
 	
 	public:
 	phonebook(void);
 	~phonebook(void);
-	
-	
+	void		setPhonebook(const contacts& contacts, int index);
+	void		getPhonebook(int index);
 };
+
+int		checkString(contacts& contacts, phonebook& phonebook, std::string str);
 
 #endif
