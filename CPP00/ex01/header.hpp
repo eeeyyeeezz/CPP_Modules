@@ -2,8 +2,9 @@
 # define HEADER_HPP
 
 # include <iostream>
-# include <string>
+# include <string.h>
 # include <stdio.h>
+# include <iomanip>
 
 #define RED "\033[1;31m"
 #define BLUE "\033[1;34m"
@@ -45,8 +46,9 @@ class phonebook{
 	public:
 	phonebook(void);
 	~phonebook(void);
-	void		setPhonebook(const contacts& contacts, int index);
-	void		getPhonebook(int index);
+	void			setPhonebook(const contacts& contacts, const int index);
+	void			printContactInfo(const int index);
+	contacts		getContactarray(const int index);
 };
 
 int		checkString(contacts& contacts, phonebook& phonebook, std::string str);

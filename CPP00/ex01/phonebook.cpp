@@ -19,11 +19,19 @@ void		phonebook::setPhonebook(const contacts& contacts, int index)
 	this->contactArray[index] = contacts;
 }
 
-void		phonebook::getPhonebook(int index)
+contacts		phonebook::getContactarray(int index)
 {
-	std::cout << contactArray[index].getFirstName() << std::endl;
-	std::cout << contactArray[index].getLastName() << std::endl;
-	std::cout << contactArray[index].getNickname() << std::endl;
-	std::cout << contactArray[index].getPhonenumber() << std::endl;
-	std::cout << contactArray[index].getDarkestSecret() << std::endl;
+	return (this->contactArray[index]);
+}
+
+void			phonebook::printContactInfo(const int index)
+{
+	std::cout << YELLOW << "First name: " << NORMAL << this->contactArray[index].getFirstName() << std::endl;
+	std::cout << YELLOW << "Last name: " << NORMAL << this->contactArray[index].getFirstName() << std::endl;
+	std::cout << YELLOW << "Nickname name: " << NORMAL << this->contactArray[index].getFirstName() << std::endl;
+	std::cout << YELLOW << "PhoneNumber name: " << NORMAL << this->contactArray[index].getFirstName() << std::endl;
+	std::cout << YELLOW << "Darkest... secret: " << NORMAL << this->contactArray[index].getFirstName() << std::endl;
+	
+
+
 }

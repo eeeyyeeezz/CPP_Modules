@@ -21,10 +21,40 @@ static	void	fillContacts(contacts& contacts)
 	contacts.setDarkestSecret(str);
 }
 
+static	std::string	trimString(std::string str)
+{
+	std::string new_str; 
+	
+	if (str.length() < 10)
+		return (str);
+	else
+		new_str = str.substr(0, 9);
+	return (new_str + '.');
+}
+
 static	void	searchContacts(phonebook& phonebook, int index)
 {
-	for (int i = 0; i < index; i++)
-		phonebook.getPhonebook(i);
+	std::cout << "*-------------------------------------------*" << std::endl;
+	std::cout << "|" << "   index  " << "|"  << "first name"
+		<< "|"  << " last name" << "|" << " nickname " << "|" << std::endl;
+	for (int i = 0; i < index; i++){
+	std::cout << "*-------------------------------------------*" << std::endl;
+	std::cout << "|" << std::setw(10) << i << "|" << std::setw(10)
+	<< trimString(phonebook.getContactarray(i).getFirstName()) << "|"
+	<< std::setw(10) << trimString(phonebook.getContactarray(i).getLastName())
+	<< "|" << std::setw(10) << trimString(phonebook.getContactarray(i).getNickname()) << "|" << std::endl;
+	}
+	std::cout << "*-------------------------------------------*" << std::endl;
+	if (index > 0)
+	{
+		int id;
+		std::cout << GREEN << "Enter index for detailed information: " << NORMAL;
+		std::cin >> id;
+		if (id < index && id >= 0 && id < 8)
+			phonebook.printContactInfo(id);
+		else
+			std::cout << "Index wrong!" << std::endl;
+	}
 }
 
 int		checkString(contacts& contacts, phonebook& phonebook, std::string str)
