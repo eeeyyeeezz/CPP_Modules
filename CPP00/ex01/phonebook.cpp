@@ -16,6 +16,7 @@ phonebook::~phonebook()
 
 void		phonebook::setPhonebook(const contacts& contacts, int index)
 {
+	std::cout << "INDEX SET [" << index << "]" << std::endl;
 	this->contactArray[index] = contacts;
 }
 

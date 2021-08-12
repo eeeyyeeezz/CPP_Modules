@@ -8,7 +8,7 @@ int		main()
 	
 	while (1){
 		std::cout << GREEN << "Enter command: " << NORMAL;
-		std::cin >> str;
+		std::getline(std::cin, str);
 		if (!checkString(contacts, phonebook, str))
 			break ;
 	}
