@@ -48,6 +48,7 @@ static	void	searchContacts(phonebook& phonebook, int index)
 	if (index > 0)
 	{
 		int id;
+		std::cin.ignore();
 		std::cout << GREEN << "Enter index for detailed information: " << NORMAL;
 		std::cin >> id;
 		if (id < index && id >= 0 && id < 8)
