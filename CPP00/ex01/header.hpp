@@ -5,6 +5,7 @@
 # include <string.h>
 # include <stdio.h>
 # include <iomanip>
+# include <ctype.h>
 
 #define RED "\033[1;31m"
 #define BLUE "\033[1;34m"
