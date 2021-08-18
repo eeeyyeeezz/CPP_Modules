@@ -1,7 +1,15 @@
-#include <iostream>
-#include <chrono>
 #include <ctime>
+#include <chrono>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <functional>
 #include "Account.hpp"
+
+int Account::_nbAccounts = 0;
+int	Account::_totalAmount = 0;
+int	Account::_totalNbDeposits = 0;
+int	Account::_totalNbWithdrawals = 0;
 
 Account::Account(){
 	this->_nbAccounts = 0;
@@ -17,7 +25,8 @@ Account::Account(int initial_deposit){
 	this->_nbWithdrawals = 0;
 	this->_amount = initial_deposit;
 	_displayTimestamp();
-	this->_nbAccounts = this->_accountIndex;
+	displayStatus();
+	this->_nbAccounts = _accountIndex;
 };
 
 int		Account::getNbAccounts(){
@@ -40,6 +49,18 @@ void	Account::displayAccountsInfos(){
 
 }
 
+void	Account::makeDeposit(int deposit){
+	
+}
+
+bool	Account::makeWithdrawal(int withdrawl){
+
+	return (true);	
+}
+
+int		Account::checkAmount() const{
+	return (1);
+}
 
 void	Account::displayStatus() const {
 	this->displayStatus();
@@ -51,14 +72,13 @@ void	Account::displayStatus() const {
 }
 
 void	Account::_displayTimestamp(){
-	auto start = std::chrono::system_clock::now();
-	auto end = std::chrono::system_clock::now();
-
-	std::chrono::duration<double> elapsed_seconds = end-start;
-	std::time_t end_time = std::chrono::system_clock::to_time_t(end);
-
-	std::cout << "TIME: [" << std::ctime(&end_time)
-				<< "] TIME???: " << elapsed_seconds.count() << std::endl;
+	std::time_t t = std::time(0);
+	std::tm* now = std::localtime(&t);
+	std::cout << "[" << (now->tm_year + 1900)
+		 << (now->tm_mon + 1)
+		 <<  now->tm_mday << "_"
+		 << now->tm_hour << now->tm_min << now->tm_sec;
+	std::cout << "]" << std::endl;
 }
 
 Account::~Account(){
