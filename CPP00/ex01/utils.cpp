@@ -1,5 +1,7 @@
 #include "header.hpp"
 
+int	flag = 0;
+
 static	int		fillContacts(contacts& contacts)
 {
 	std::string	str;
@@ -71,8 +73,10 @@ static	int		checkIfInt(std::string id_string)
 	return (0);
 }
 
-static	void	searchContacts(phonebook& phonebook, int index)
+static	void	searchContacts(phonebook& phonebook, int index, int flag)
 {
+	if (flag == 1)
+		index = 2;
 	std::cout << "*-------------------------------------------*" << std::endl;
 	std::cout << "|" << "   index  " << "|"  << "first name"
 		<< "|"  << " last name" << "|" << " nickname " << "|" << std::endl;
@@ -112,11 +116,14 @@ int		checkString(contacts& contacts, phonebook& phonebook, std::string str)
 	if (str == "EXIT")
 		return (0);
 	else if (str == "SEARCH")
-		searchContacts(phonebook, index);
+		searchContacts(phonebook, index, flag);
 	else if (str == "ADD")
 	{
 		if (index >= 8)
+		{
 			index = 0;
+			flag = 1;
+		}
 		if (!fillContacts(contacts))
 		{
 			phonebook.setPhonebook(contacts, index);
