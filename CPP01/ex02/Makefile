@@ -1,4 +1,4 @@
-NAME = Zombie
+NAME = pointer
 
 all: 
 	clang++ -std=c++98 -pedantic -Wall -Wextra -Werror *.cpp -o ${NAME}
