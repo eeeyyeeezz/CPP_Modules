@@ -1,14 +1,11 @@
 {
 	"files.associations": {
-		"iostream": "cpp",
-		"ostream": "cpp",
-		"string": "cpp",
-		"iomanip": "cpp",
 		"array": "cpp",
 		"atomic": "cpp",
 		"bit": "cpp",
 		"*.tcc": "cpp",
 		"cctype": "cpp",
+		"chrono": "cpp",
 		"clocale": "cpp",
 		"cmath": "cpp",
 		"cstdarg": "cpp",
@@ -31,6 +28,8 @@
 		"numeric": "cpp",
 		"optional": "cpp",
 		"random": "cpp",
+		"ratio": "cpp",
+		"string": "cpp",
 		"string_view": "cpp",
 		"system_error": "cpp",
 		"tuple": "cpp",
@@ -38,39 +37,16 @@
 		"utility": "cpp",
 		"fstream": "cpp",
 		"initializer_list": "cpp",
+		"iomanip": "cpp",
 		"iosfwd": "cpp",
+		"iostream": "cpp",
 		"istream": "cpp",
 		"limits": "cpp",
 		"new": "cpp",
+		"ostream": "cpp",
 		"sstream": "cpp",
 		"stdexcept": "cpp",
 		"streambuf": "cpp",
-		"typeinfo": "cpp",
-<<<<<<< HEAD
-		"chrono": "cpp"
-=======
-		"__bit_reference": "cpp",
-		"__config": "cpp",
-		"__debug": "cpp",
-		"__errc": "cpp",
-		"__functional_base": "cpp",
-		"__locale": "cpp",
-		"__mutex_base": "cpp",
-		"__nullptr": "cpp",
-		"__string": "cpp",
-		"__threading_support": "cpp",
-		"__tuple": "cpp",
-		"bitset": "cpp",
-		"chrono": "cpp",
-		"cstring": "cpp",
-		"ios": "cpp",
-		"locale": "cpp",
-		"mutex": "cpp",
-		"__hash_table": "cpp",
-		"__node_handle": "cpp",
-		"__split_buffer": "cpp",
-		"complex": "cpp",
-		"ratio": "cpp"
->>>>>>> 5fa951173a854330636ea1a25885910ac3c377d4
+		"typeinfo": "cpp"
 	}
 }

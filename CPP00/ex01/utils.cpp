@@ -87,12 +87,8 @@ static	void	searchContacts(phonebook& phonebook, int index)
 	if (index > 0)
 	{
 		int id;
-<<<<<<< HEAD
-		std::cin.ignore();
-=======
 		std::string id_string;
 		
->>>>>>> 5fa951173a854330636ea1a25885910ac3c377d4
 		std::cout << GREEN << "Enter index for detailed information: " << NORMAL;
 		std::getline(std::cin, id_string);
 		if (!checkIfInt(id_string))
@@ -101,7 +97,6 @@ static	void	searchContacts(phonebook& phonebook, int index)
 			return ;
 		}
 		id = atoi(id_string.c_str());
-		std::cout << "THIS IS ID [" << id << "]" << std::endl;
 		if (id < index && id >= 0 && id < 8)
 			phonebook.printContactInfo(id);
 		else
@@ -114,17 +109,14 @@ int		checkString(contacts& contacts, phonebook& phonebook, std::string str)
 {
 	static	int	index;
 	
-	if (index >= 2)
-	{
-		std::cout << "INDEX DOWN [" << index << "]" << std::endl;
-		index = 0;
-	}
 	if (str == "EXIT")
 		return (0);
 	else if (str == "SEARCH")
 		searchContacts(phonebook, index);
 	else if (str == "ADD")
 	{
+		if (index >= 8)
+			index = 0;
 		if (!fillContacts(contacts))
 		{
 			phonebook.setPhonebook(contacts, index);
