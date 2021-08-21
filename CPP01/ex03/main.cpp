@@ -2,7 +2,6 @@
 #include "includes/HumanB.hpp"
 #include "includes/Weapon.hpp"
 
-
 int main()
 {
 	{
