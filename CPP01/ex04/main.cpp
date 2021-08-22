@@ -46,15 +46,10 @@ int		main(int argc, char **argv){
 		{
 			new_content = ft_replace(filename_content, s1, s2, find);
 			fs2 << new_content;
-			fs2 << " ";
 		}
 		else
-		{
 			fs2 << filename_content;
-			fs2 << " ";
-		}
 	}
-		
 	fs.close();
 	fs2.close();
 }
