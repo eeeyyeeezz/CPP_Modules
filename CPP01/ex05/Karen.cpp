@@ -36,11 +36,9 @@ void		Karen::complain(std::string level){
 		&Karen::error
 	};
 	int i = 0;
-	while (i < 4 && array[i] != level)
-	{
+	while (i < 4 && array[i] != level){
 		(this->*karen_ptr[i])();	
 		i++;
 	}
 	(this->*karen_ptr[i])();	
-	
 }

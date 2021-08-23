@@ -3,12 +3,12 @@
 int		main(){
 	Karen	Karen;
 	
-	std::cout << "First\n";
+	std::cout << RED << "First\n";
 	Karen.complain("debug");
-	std::cout << "Second\n";
+	std::cout << RED << "Second\n";
 	Karen.complain("info");
-	std::cout << "Third\n";
+	std::cout << RED << "Third\n";
 	Karen.complain("warning");
-	std::cout << "Fourth\n";
+	std::cout << RED << "Fourth\n";
 	Karen.complain("error");	
 }
