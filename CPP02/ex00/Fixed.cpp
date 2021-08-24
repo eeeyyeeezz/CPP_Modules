@@ -1,17 +1,23 @@
 #include "Fixed.hpp"
 
-Fixed::Fixed() {
-	std::cout << BLUE << "Constructor called! ( ͡~ ͜ʖ ͡°)" << NORMAL << std::endl;
+Fixed::Fixed() : value(0){
+	std::cout << BLUE << "Default constructor called! ( ͡~ ͜ʖ ͡°)" << NORMAL << std::endl;
 }
 
-Fixed::Fixed(int value) : value(value){
-	std::cout << BLUE << "Constructor called! ( ͡~ ͜ʖ ͡°)" << NORMAL << std::endl;
+Fixed::Fixed(Fixed const &fixed) : value(fixed.value) {
+	std::cout << BLUE << "Copy constructor called! ( ͡~ ͜ʖ ͡°)" << NORMAL << std::endl;
 }
 
 Fixed::~Fixed(){ 
 	std::cout << RED << "Destructor called! (☞ ͡° ͜ʖ ͡°)☞" << NORMAL << std::endl;
-	
 }
 
-int			Fixed::getRawBits() const { return (this->value); }
+int			Fixed::getRawBits() const { 
+	std::cout << YELLOW << "getRawBits function called! (˵ ͡o ͜ʖ ͡o˵)☞" << NORMAL << std::endl;
+	return (this->value); 
+}
 
+void		Fixed::setRawBits(int const raw) { 
+	std::cout << PURPLE << "setRawBits function called! ( •̀ᴗ•́ )و" << NORMAL << std::endl;
+	this->value = raw; 
+}

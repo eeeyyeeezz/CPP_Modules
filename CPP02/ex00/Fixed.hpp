@@ -11,9 +11,10 @@ class Fixed{
 	
 	public:
 	Fixed();
-	Fixed(int value);
+	Fixed(Fixed const &fixed);
 	~Fixed();
-	int	getRawBits(void)	const;
+	void	setRawBits(int const raw);
+	int		getRawBits(void)	const;
 		
 };
 

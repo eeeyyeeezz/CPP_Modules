@@ -5,7 +5,7 @@ NORMAL = "\033[0m"
 
 all: 
 	@clang++ -Wall -Wextra -Werror *.cpp -o ${NAME}
-	@echo ${GREEN}"Compile done!"${NORMAL}
+	@echo ${GREEN}"Compile ${NAME} done!"${NORMAL}
 	
 clean:
 	rm -rf ${NAME}
