@@ -12,6 +12,14 @@ Fixed::~Fixed(){
 	std::cout << RED << "Destructor called! (☞ ͡° ͜ʖ ͡°)☞" << NORMAL << std::endl;
 }
 
+Fixed &Fixed::operator= (const Fixed &obj){
+	if (this == &obj)
+		return *this;
+	this->setRawBits(obj.getRawBits());
+	std::cout << RED << "Operator constructor called! ( ͡~ ͜ʖ ͡°)" << NORMAL << std::endl;
+	return (*this);
+}
+
 int			Fixed::getRawBits() const { 
 	std::cout << YELLOW << "getRawBits function called! (˵ ͡o ͜ʖ ͡o˵)☞" << NORMAL << std::endl;
 	return (this->value); 
