@@ -4,10 +4,10 @@ GREEN = "\033[1;32m"
 NORMAL = "\033[0m"
 
 all: 
-	@clang++ -Wall -Wextra -Werror *.cpp -o ${NAME}
+	@clang++ -std=c++98 -Wall -Wextra -Werror *.cpp -o ${NAME}
 	@echo ${GREEN}"Compile ${NAME} done!"${NORMAL}
 	
 clean:
-	rm -rf ${NAME}
+	@rm -rf ${NAME}
 	
 re: clean all
