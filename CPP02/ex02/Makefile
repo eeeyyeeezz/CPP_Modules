@@ -8,6 +8,6 @@ all:
 	@echo ${GREEN}"Compile ${NAME} done!"${NORMAL}
 	
 clean:
-	rm -rf ${NAME}
+	@rm -rf ${NAME}
 	
 re: clean all

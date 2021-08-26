@@ -21,10 +21,10 @@ class Fixed{
 	// bool	&operator<= (const Fixed &fixed);
 	// bool	&operator== (const Fixed &fixed);
 	// bool	&operator!= (const Fixed &fixed);
-	Fixed	&operator+ (const Fixed &fixed1, const Fixed &fixed2);
-	Fixed	&operator- (const Fixed &fixed);
-	Fixed	&operator* (const Fixed &fixed);
-	Fixed	&operator/ (const Fixed &fixed);
+	Fixed	operator+ (const Fixed &fixed) const;
+	Fixed	operator- (const Fixed &fixed) const;
+	Fixed	operator* (const Fixed &fixed) const;
+	Fixed	operator/ (const Fixed &fixed) const;
 	// operator's overload end
 	Fixed(Fixed const &fixed);
 	~Fixed();

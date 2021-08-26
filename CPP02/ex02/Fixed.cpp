@@ -9,7 +9,6 @@ Fixed::Fixed(const int value){
 
 Fixed::Fixed(const float value){ 
 	this->value = roundf(value * (1 << this->const_int));
-	std::cout << this->value << " VALUE" << std::endl;
 	std::cout << BLUE << "Copy constructor called! ( ͡~ ͜ʖ ͡°)" << NORMAL << std::endl; 
 }
 
@@ -36,13 +35,10 @@ Fixed &Fixed::operator= (const Fixed &obj){
 	return (*this);
 }
 
-Fixed &Fixed::operator+ (const Fixed &fixed1, const Fixed &fixed2) { return (fixed1.value + fixed2.value); }
-
-Fixed &Fixed::operator- (const Fixed &fixed1, const Fixed &fixed2) { return (fixed1.value - fixed2.value); }
-
-Fixed &Fixed::operator* (const Fixed &fixed) { return (this->toFloat() * fixed.toFloat()); }
-
-Fixed &Fixed::operator/ (const Fixed &fixed) { return (this->toFloat() / fixed.toFloat()); }
+Fixed Fixed::operator+ (const Fixed &fixed) const{ return (Fixed(this->toFloat() + fixed.toFloat())); }
+Fixed Fixed::operator- (const Fixed &fixed) const{ return (Fixed(this->toFloat() - fixed.toFloat())); }
+Fixed Fixed::operator* (const Fixed &fixed) const{ return (Fixed(this->toFloat() * fixed.toFloat())); }
+Fixed Fixed::operator/ (const Fixed &fixed) const{ return (Fixed(this->toFloat() / fixed.toFloat())); }
 
 // Fixed &Fixed::operator> (const Fixed &obj){
 // }
