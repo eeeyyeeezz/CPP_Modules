@@ -76,7 +76,7 @@ static	int		checkIfInt(std::string id_string)
 static	void	searchContacts(phonebook& phonebook, int index, int flag)
 {
 	if (flag == 1)
-		index = 2;
+		index = 8;
 	std::cout << "*-------------------------------------------*" << std::endl;
 	std::cout << "|" << "   index  " << "|"  << "first name"
 		<< "|"  << " last name" << "|" << " nickname " << "|" << std::endl;

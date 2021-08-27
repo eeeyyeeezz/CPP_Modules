@@ -12,12 +12,16 @@ int			ClapTrap::getEnergyPoints() { return (this->energyPoints); }
 int			ClapTrap::getAttackDamage() { return (this->attackDamage); }
 
 void ClapTrap::attack(std::string const &target){
-	std::cout << BLACK_RED << "ClapTrap " << ClapTrap::getName() << " attacks " << target << ", causing " << ClapTrap::getAttackDamage() << " attack damage! (ง ͠° ͟ل͜ ͡°)ง" << NORMAL << std::endl;
+	std::cout << WHITE << "ClapTrap " << this->getName() << " attacks " << target << ", causing " << this->getAttackDamage() << " attack damage! (ง ͠° ͟ل͜ ͡°)ง" << NORMAL << std::endl;
 }
 
 void ClapTrap::takeDamage(unsigned int ammount){
-	(void)ammount;
-}
+	std::cout << GRAY << "ClapTrap " << this->getName() << " takes damage! Total hitPoints :" << this->getHitpoints() - ammount << NORMAL;
+	if (this->getHitpoints() - ammount <= 0)
+		std::cout << BLACK_RED << "ClapTrap " << this->getName() << " is DEAD! 	(ಥ_ʖಥ)\n";
+	else
+		std::cout << std::endl;  
+} 
 
 void ClapTrap::beRepaired(unsigned int ammount){
 	(void)ammount;
