@@ -7,8 +7,6 @@ ScavTrap::ScavTrap(){
 	std::cout << BLUE << "ScavTrap default constructor called (˵ ͡o ͜ʖ ͡o˵)\n" << NORMAL; 
 }
 
-ScavTrap::ScavTrap(const ScavTrap &scavtrap) { *this = scavtrap; }
-
 ScavTrap::ScavTrap(std::string name){
 	this->name = name;	
 	this->hitPoints = 100;
@@ -27,6 +25,8 @@ ScavTrap &ScavTrap::operator= (const ScavTrap &scavtrap) {
 	std::cout << RED << "ScavTrap operator constructor called! ( ͡~ ͜ʖ ͡°)" << NORMAL << std::endl;
 	return (*this);
 }
+
+// ScavTrap &ScavTrap(const ScavTrap &scavtrap) { }
 
 void		ScavTrap::guardGate(){ std::cout << BLUE << "ScavTrap " << this->name << " is on guardGate mode!!\n" << NORMAL; }
 
