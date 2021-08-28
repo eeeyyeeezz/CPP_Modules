@@ -6,7 +6,6 @@ ClapTrap::ClapTrap(const ClapTrap &claptrap) { *this = claptrap; }
 
 ClapTrap::ClapTrap(std::string name) : name(name), hitPoints(10), energyPoints(10), attackDamage(0) { std::cout << BLUE << "ClapTrap copy constructor called (˵ ͡o ͜ʖ ͡o˵)\n" << NORMAL; }
 
-ClapTrap::~ClapTrap() { std::cout << RED << "ClapTrap destructor Called ( ͡°( ͡° ͜ʖ( ͡° ͜ʖ°)ʖ ͡°) ͡°)\n" << NORMAL; }
 
 // std::string ClapTrap::getName() { return (this->name); }
 // int			ClapTrap::getHitpoints() { return (this->hitPoints); }
@@ -49,3 +48,5 @@ ClapTrap &ClapTrap::operator= (const ClapTrap &claptrap) {
 	std::cout << RED << "ClapTrap operator constructor called! ( ͡~ ͜ʖ ͡°)" << NORMAL << std::endl;
 	return (*this);
 }
+
+ClapTrap::~ClapTrap() { std::cout << RED << "ClapTrap destructor Called ( ͡°( ͡° ͜ʖ( ͡° ͜ʖ°)ʖ ͡°) ͡°)\n" << NORMAL; }

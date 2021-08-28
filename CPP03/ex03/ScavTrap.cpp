@@ -1,4 +1,4 @@
-#include "Scavtrap.hpp"
+#include "ScavTrap.hpp"
 
 ScavTrap::ScavTrap(){ 
 	this->hitPoints = 100;

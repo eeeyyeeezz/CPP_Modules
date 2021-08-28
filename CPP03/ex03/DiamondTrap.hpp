@@ -1,9 +1,10 @@
 #ifndef DIAMOND
 #define DIAMOND
-#include "FragTrap.hpp"
+#include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
-class DiamondTrap : public FragTrap, public ScavTrap{
+class DiamondTrap : public ScavTrap, public FragTrap {
 	private:
 	std::string	name;
 	
@@ -14,6 +15,7 @@ class DiamondTrap : public FragTrap, public ScavTrap{
 	~DiamondTrap();
 	DiamondTrap &operator=	(const DiamondTrap &diamondtrap);
 
+	void	attack(std::string const &target);
 	void	whoAmI();
 };
 

@@ -1,8 +1,8 @@
 #ifndef FRAGTRAP
 #define FRAGTRAP
-#include "Scavtrap.hpp"	
+#include "ScavTrap.hpp"	
 
-class FragTrap : public ScavTrap{
+class FragTrap : public virtual ClapTrap{
 	public:
 	FragTrap();
 	FragTrap(std::string name);
