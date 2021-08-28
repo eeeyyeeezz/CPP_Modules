@@ -8,11 +8,6 @@ ClapTrap::ClapTrap(std::string name) : name(name), hitPoints(10), energyPoints(1
 
 ClapTrap::~ClapTrap() { std::cout << RED << "Destructor Called ( ͡°( ͡° ͜ʖ( ͡° ͜ʖ°)ʖ ͡°) ͡°)\n" << NORMAL; }
 
-// std::string ClapTrap::getName() { return (this->name); }
-// int			ClapTrap::getHitpoints() { return (this->hitPoints); }
-// int			ClapTrap::getEnergyPoints() { return (this->energyPoints); }
-// int			ClapTrap::getAttackDamage() { return (this->attackDamage); }
-
 void ClapTrap::attack(std::string const &target){
 	if (this->energyPoints >= 5){
 		std::cout << WHITE << this->name << " attacks " << target << ", causing " << this->attackDamage << " attack damage! (ง ͠° ͟ل͜ ͡°)ง" << NORMAL << std::endl;

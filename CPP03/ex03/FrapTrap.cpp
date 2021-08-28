@@ -2,7 +2,7 @@
 
 FragTrap::FragTrap(){ 
 	this->hitPoints = 100;
-	this->energyPoints = 50;
+	this->energyPoints = 100;
 	this->attackDamage = 30;
 	std::cout << BLUE << "FragTrap default constructor called (˵ ͡o ͜ʖ ͡o˵)\n" << NORMAL; 
 }
