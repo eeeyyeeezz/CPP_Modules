@@ -15,7 +15,7 @@ ClapTrap::~ClapTrap() { std::cout << RED << "Destructor Called ( ͡°( ͡° ͜ʖ
 
 void ClapTrap::attack(std::string const &target){
 	if (this->energyPoints >= 5){
-		std::cout << WHITE << "ClapTrap " << this->name << " attacks " << target << ", causing " << this->attackDamage << " attack damage! (ง ͠° ͟ل͜ ͡°)ง" << NORMAL << std::endl;
+		std::cout << WHITE << this->name << " attacks " << target << ", causing " << this->attackDamage << " attack damage! (ง ͠° ͟ل͜ ͡°)ง" << NORMAL << std::endl;
 		this->energyPoints -= 5;
 	}
 	else	

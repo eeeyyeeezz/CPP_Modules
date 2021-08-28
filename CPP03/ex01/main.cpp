@@ -2,9 +2,9 @@
 #include "Scavtrap.hpp"
 
 int		main(){
-	ClapTrap lol("lol");
 	ScavTrap kek("Scappy");
 
+	kek.attack("gmorra");
 	kek.takeDamage(150);
 	kek.beRepaired(100);
 	kek.takeDamage(99);

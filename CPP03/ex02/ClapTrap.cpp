@@ -14,7 +14,12 @@ ClapTrap::~ClapTrap() { std::cout << RED << "ClapTrap destructor Called ( ͡°( 
 // int			ClapTrap::getAttackDamage() { return (this->attackDamage); }
 
 void ClapTrap::attack(std::string const &target){
-	std::cout << WHITE << "ClapTrap " << this->name << " attacks " << target << ", causing " << this->attackDamage << " attack damage! (ง ͠° ͟ل͜ ͡°)ง" << NORMAL << std::endl;
+	if (this->energyPoints >= 5){
+		std::cout << WHITE << this->name << " attacks " << target << ", causing " << this->attackDamage << " attack damage! (ง ͠° ͟ل͜ ͡°)ง" << NORMAL << std::endl;
+		this->energyPoints -= 5;
+	}
+	else	
+		std::cout << BLACK_RED << "Energy points low! Pls, repair ( ͠° ͟ ͜ʖ ͡ ͠°)\n" << NORMAL;
 }
 
 void ClapTrap::takeDamage(unsigned int ammount){

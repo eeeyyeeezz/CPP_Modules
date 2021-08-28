@@ -9,5 +9,4 @@ int		main(){
 	lol.takeDamage(5);
 	lol.beRepaired(10);
 	lol.attack("Matilda");
-	
 }

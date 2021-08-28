@@ -3,8 +3,6 @@
 #include "Scavtrap.hpp"	
 
 class FragTrap : public ScavTrap{
-	private:
-	
 	public:
 	FragTrap();
 	FragTrap(std::string name);
