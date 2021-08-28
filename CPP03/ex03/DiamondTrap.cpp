@@ -32,10 +32,10 @@ DiamondTrap &DiamondTrap::operator= (const DiamondTrap &diamondtrap) {
 void		DiamondTrap::attack(std::string const &target) { ScavTrap::attack(target); }
 
 void		DiamondTrap::whoAmI() { 
-	std::cout << BLUE << "beepboop i'm DIamOndDDD Trap ℃ↂ_ↂ NaMe: " << 
-	this->name << " hitpoints: " << this->hitPoints << "\nenergyPoints: " << 
-	this->energyPoints << " attackDamage: " << this->attackDamage << NORMAL << 
+	std::cout << WHITE << "beepboop i'm DIamOndDDD Trap ℃ↂ_ↂ \nNaMe: " << 
+	this->name << "; hitpoints: " << this->hitPoints << "\nenergyPoints: " << 
+	this->energyPoints << "; attackDamage: " << this->attackDamage << NORMAL << 
 	std::endl; 
 }
 
-FragTrap::~FragTrap() { std::cout << RED << "DiamondTrap destructor Called ( ͡°( ͡° ͜ʖ( ͡° ͜ʖ°)ʖ ͡°) ͡°)\n" << NORMAL; }
+DiamondTrap::~DiamondTrap() { std::cout << RED << "DiamondTrap destructor Called ( ͡°( ͡° ͜ʖ( ͡° ͜ʖ°)ʖ ͡°) ͡°)\n" << NORMAL; }
