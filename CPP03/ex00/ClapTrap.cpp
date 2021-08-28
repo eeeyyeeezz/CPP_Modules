@@ -1,8 +1,8 @@
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap() : hitPoints(10), energyPoints(10), attackDamage(0) { std::cout << BLUE << "Default constructor called (˵ ͡o ͜ʖ ͡o˵)\n" << NORMAL; }
+ClapTrap::ClapTrap() : hitPoints(10), energyPoints(10), attackDamage(0) { std::cout << BLUE << "ClapTrap default constructor called (˵ ͡o ͜ʖ ͡o˵)\n" << NORMAL; }
 
-ClapTrap::ClapTrap(std::string name) : name(name), hitPoints(10), energyPoints(10), attackDamage(0) { std::cout << BLUE << "Copy constructor called (˵ ͡o ͜ʖ ͡o˵)\n" << NORMAL; }
+ClapTrap::ClapTrap(std::string name) : name(name), hitPoints(10), energyPoints(10), attackDamage(0) { std::cout << BLUE << "ClapTrap copy constructor called (˵ ͡o ͜ʖ ͡o˵)\n" << NORMAL; }
 
 ClapTrap::~ClapTrap() { std::cout << RED << "Destructor Called ( ͡°( ͡° ͜ʖ( ͡° ͜ʖ°)ʖ ͡°) ͡°)\n" << NORMAL; }
 
@@ -16,8 +16,9 @@ void ClapTrap::attack(std::string const &target){
 }
 
 void ClapTrap::takeDamage(unsigned int ammount){
+	int	temp = this->hitPoints;
 	this->hitPoints -= ammount;
-	std::cout << GRAY << "ClapTrap " << this->name << " with " << this->hitPoints << " hitpoints, takes damage! Total hitPoints: " << this->hitPoints << NORMAL;
+	std::cout << GRAY << "ClapTrap " << this->name << " with " << temp << " hitpoints, takes damage! Total hitPoints: " << this->hitPoints << NORMAL;
 	if (this->hitPoints <= 0){
 		std::cout << BLACK_RED << "\nClapTrap " << this->name << " is DEAD! 	(ಥ_ʖಥ)\n";
 		this->hitPoints = 0;

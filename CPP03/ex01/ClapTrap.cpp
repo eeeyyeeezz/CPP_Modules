@@ -1,10 +1,10 @@
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap() : hitPoints(10), energyPoints(10), attackDamage(0) { std::cout << BLUE << "Default constructor called (˵ ͡o ͜ʖ ͡o˵)\n" << NORMAL; }
+ClapTrap::ClapTrap() : hitPoints(10), energyPoints(10), attackDamage(0) { std::cout << BLUE << "ClapTrap default constructor called (˵ ͡o ͜ʖ ͡o˵)\n" << NORMAL; }
 
-ClapTrap::ClapTrap(std::string name) : name(name), hitPoints(10), energyPoints(10), attackDamage(0) { std::cout << BLUE << "Copy constructor called (˵ ͡o ͜ʖ ͡o˵)\n" << NORMAL; }
+ClapTrap::ClapTrap(std::string name) : name(name), hitPoints(10), energyPoints(10), attackDamage(0) { std::cout << BLUE << "ClapTrap copy constructor called (˵ ͡o ͜ʖ ͡o˵)\n" << NORMAL; }
 
-ClapTrap::~ClapTrap() { std::cout << RED << "Destructor Called ( ͡°( ͡° ͜ʖ( ͡° ͜ʖ°)ʖ ͡°) ͡°)\n" << NORMAL; }
+ClapTrap::~ClapTrap() { std::cout << RED << "ClapTrap destructor Called ( ͡°( ͡° ͜ʖ( ͡° ͜ʖ°)ʖ ͡°) ͡°)\n" << NORMAL; }
 
 // std::string ClapTrap::getName() { return (this->name); }
 // int			ClapTrap::getHitpoints() { return (this->hitPoints); }
@@ -16,10 +16,11 @@ void ClapTrap::attack(std::string const &target){
 }
 
 void ClapTrap::takeDamage(unsigned int ammount){
+	int temp = this->hitPoints;
 	this->hitPoints -= ammount;
-	std::cout << GRAY << "ClapTrap " << this->name << " with " << this->hitPoints << " hitpoints, takes damage! Total hitPoints: " << this->hitPoints << NORMAL;
+	std::cout << WHITE << this->name << " with " << temp << " hitpoints, takes " << ammount << " damage! Total hitPoints: " << this->hitPoints << NORMAL;
 	if (this->hitPoints <= 0){
-		std::cout << BLACK_RED << "\nClapTrap " << this->name << " is DEAD! 	(ಥ_ʖಥ)\n";
+		std::cout << BLACK_RED << "\n" << this->name << " is DEAD! 	(ಥ_ʖಥ)\n";
 		this->hitPoints = 0;
 	}
 	else
@@ -28,5 +29,16 @@ void ClapTrap::takeDamage(unsigned int ammount){
 
 void ClapTrap::beRepaired(unsigned int ammount){
 	this->hitPoints += ammount;
-	std::cout << PURPLE << "Claptrap " << this->name << " is healed on " << ammount << " points! Total hp: " << this->hitPoints << " ( ͡° ͜ʖ ͡°)" << NORMAL << std::endl;
+	std::cout << PURPLE << this->name << " is healed on " << ammount << " points! Total hp: " << this->hitPoints << " ( ͡° ͜ʖ ͡°)" << NORMAL << std::endl;
+}
+
+ClapTrap &ClapTrap::operator= (const ClapTrap &claptrap) {
+	if (this == &claptrap)
+		return *this;
+	this->name = claptrap.name;
+	this->hitPoints = claptrap.hitPoints;
+	this->energyPoints = claptrap.energyPoints;
+	this->attackDamage = claptrap.attackDamage;
+	std::cout << RED << "ClapTrap operator constructor called! ( ͡~ ͜ʖ ͡°)" << NORMAL << std::endl;
+	return (*this);
 }

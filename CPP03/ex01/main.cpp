@@ -1,13 +1,12 @@
 #include "ClapTrap.hpp"
+#include "Scavtrap.hpp"
 
 int		main(){
 	ClapTrap lol("lol");
+	ScavTrap kek("Scappy");
 
-	lol.attack("Boby");
-	lol.takeDamage(5);
-	lol.takeDamage(4);
-	lol.takeDamage(1);
-	lol.beRepaired(50);
-	lol.takeDamage(70);
-	
+	kek.takeDamage(150);
+	kek.beRepaired(100);
+	kek.takeDamage(99);
+	kek.guardGate();
 }
