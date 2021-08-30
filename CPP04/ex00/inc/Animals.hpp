@@ -1,7 +1,8 @@
 #ifndef HEADER
 #define HEADER
 #include <iostream>
-#include "../colors.hpp"
+#include "../../colors.hpp"
+#include "WrongAnimal.hpp"
 
 class Animal{
 	protected:
@@ -40,34 +41,6 @@ class Cat : public virtual Animal{
 	
 	std::string			getType()	const;
 	void		makeSound()	const;
-};
-
-class WrongAnimal{
-	protected:
-	std::string type;
-	
-	public:
-	WrongAnimal();
-	WrongAnimal(std::string name);
-	WrongAnimal(WrongAnimal const &WrongAnimal);
-	virtual ~WrongAnimal();
-	WrongAnimal &operator=	(const WrongAnimal &claptrap);
-	
-	std::string			getType()	const;
-	virtual void		makeSound()	const;
-};
-
-class WrongCat : virtual public WrongAnimal{
-	public:
-	WrongCat();
-	WrongCat(std::string name);
-	WrongCat(WrongCat const &WrongCat);
-	virtual ~WrongCat();
-	WrongCat &operator=	(const WrongCat &claptrap);
-	
-	std::string			getType()	const;
-	void		makeSound()	const;
-	
 };
 
 #endif
