@@ -31,6 +31,7 @@ int		main(int argc, char **argv){
 	std::string	s2					= argv[3];
 	std::ofstream					fs2(filename_replace.c_str());
 	
+	
 	if (check_strings(filename, s1, s2))
 		ft_error("Strings empty!");	
 	fs.open(filename.c_str(), std::fstream::in | std::fstream::out);
@@ -40,15 +41,19 @@ int		main(int argc, char **argv){
 	std::string	new_content;
 	while (!fs.eof())
 	{
-		fs >> filename_content;
+		std::getline(fs, filename_content);
 		int	find = filename_content.find(s1);
 		if (find != -1)
 		{
 			new_content = ft_replace(filename_content, s1, s2, find);
 			fs2 << new_content;
+			fs2 << "\n";
 		}
 		else
+		{
 			fs2 << filename_content;
+			fs2 << "\n";
+		}
 	}
 	fs.close();
 	fs2.close();
