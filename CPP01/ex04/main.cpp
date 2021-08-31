@@ -11,14 +11,14 @@ static	int		check_strings(std::string filename, std::string s1, std::string s2){
 	return (0);
 }
 
-static	std::string		ft_replace(std::string str, std::string s1, std::string s2, int find){
-	std::string	new_string;
+// static	std::string		ft_replace(std::string str, std::string s1, std::string s2, int find){
+// 	std::string	new_string;
 	
-	new_string = str.substr(0, find);
-	new_string += s2;
-	new_string += str.substr(find + s1.length());
-	return (new_string);
-}
+// 	new_string = str.substr(0, find);
+// 	new_string += s2;
+// 	new_string += str.substr(find + s1.length());
+// 	return (new_string);
+// }
 
 int		main(int argc, char **argv){
 	if (argc != 4)
@@ -29,7 +29,6 @@ int		main(int argc, char **argv){
 	std::string	filename_replace	= filename + ".replace";
 	std::string s1 					= argv[2];
 	std::string	s2					= argv[3];
-	std::ofstream					fs2(filename_replace.c_str());
 	
 	
 	if (check_strings(filename, s1, s2))
@@ -37,24 +36,21 @@ int		main(int argc, char **argv){
 	fs.open(filename.c_str(), std::fstream::in | std::fstream::out);
 	if (!fs.is_open())
 		ft_error("Fd Error!");
+	std::ofstream					fs2(filename_replace.c_str());
 	std::string	filename_content;
 	std::string	new_content;
-	while (!fs.eof())
-	{
-		std::getline(fs, filename_content);
-		int	find = filename_content.find(s1);
-		if (find != -1)
-		{
-			new_content = ft_replace(filename_content, s1, s2, find);
-			fs2 << new_content;
-			fs2 << "\n";
+	while (std::getline(fs, filename_content)){
+		int i = -1;
+		int	find;
+		while (++i < (int)filename_content.length()){
+			if ((find = filename_content.find(s1, i)) != -1){
+				filename_content.erase(find, s1.length());
+				filename_content.insert(find, s2);
+			}
 		}
-		else
-		{
-			fs2 << filename_content;
-			fs2 << "\n";
-		}
+		new_content += filename_content + "\n";
 	}
+	fs2 << new_content;
 	fs.close();
 	fs2.close();
 }

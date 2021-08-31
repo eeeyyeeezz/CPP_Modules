@@ -3,7 +3,6 @@
 #include "colors.hpp"
 #include <iostream>
 
-
 class Weapon{
 	private:
 	std::string type;

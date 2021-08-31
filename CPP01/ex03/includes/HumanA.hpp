@@ -3,7 +3,6 @@
 #include "Weapon.hpp"
 #include "colors.hpp"
 
-
 class HumanA{
 	private:
 	std::string		name;
