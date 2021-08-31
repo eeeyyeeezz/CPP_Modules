@@ -46,8 +46,8 @@ class Cat : public virtual Animal{
 	virtual ~Cat();
 	Cat &operator=	(const Cat &claptrap);
 	
-	std::string			getType()	const;
-	void		makeSound()	const;
+	void				makeSound()		const;
+	std::string			getType()		const;
 };
 
 #endif
