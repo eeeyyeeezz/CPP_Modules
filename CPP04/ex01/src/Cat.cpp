@@ -28,7 +28,6 @@ Cat &Cat::operator= (const Cat &cat) {
 Cat::~Cat() { 
 	std::cout << RED << "Cat destructor Called ( ͡°( ͡° ͜ʖ( ͡° ͜ʖ°)ʖ ͡°) ͡°)\n" << NORMAL; 
 	delete this->brain;
-
 }
 
 

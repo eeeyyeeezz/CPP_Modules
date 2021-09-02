@@ -1,6 +1,9 @@
 #include "inc/Animals.hpp"
 
 int		main(){
-	Animal	*animal[100];
+	const Animal *dog = new Dog();
+	const Animal *cat = new Cat();
 
+	delete dog;
+	delete cat;
 }

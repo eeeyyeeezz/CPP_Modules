@@ -13,9 +13,11 @@ Brain &Brain::operator= (const Brain &brain) {
 	return (*this);
 }
 
-Brain::~Brain() { std::cout << RED << "Brain destructor Called ( ͡°( ͡° ͜ʖ( ͡° ͜ʖ°)ʖ ͡°) ͡°)\n" << NORMAL; }
+Brain::~Brain() { 
+	std::cout << RED << "Brain destructor Called ( ͡°( ͡° ͜ʖ( ͡° ͜ʖ°)ʖ ͡°) ͡°)\n" << NORMAL; 
+}
 
-std::string			Brain::setIdeas(std::string *ideas){
+void			Brain::setIdeas(std::string *ideas){
 	for (int i = 0; i < 100; i++)
 		this->ideas[i] = ideas[i];
 }
