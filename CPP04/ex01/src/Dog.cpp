@@ -1,18 +1,26 @@
 #include "../inc/Animals.hpp"
 
-Dog::Dog() : Animal() { std::cout << BLUE << "Dog default constructor called (˵ ͡o ͜ʖ ͡o˵)\n" << NORMAL; }
+Dog::Dog() : Animal() { 
+	std::cout << BLUE << "Dog default constructor called (˵ ͡o ͜ʖ ͡o˵)\n" << NORMAL; 
+	this->brain = new Brain();
+}
 
 Dog::Dog(std::string name){ 
 	this->type = name;
+	this->brain = new Brain();
 	std::cout << BLUE << "Dog copy constructor called (˵ ͡o ͜ʖ ͡o˵)\n" << NORMAL; 
 }
 
 Dog::Dog(Dog const &Dog) : Animal(Dog) { *this = Dog; }
 
-Dog &Dog::operator= (const Dog &Dog) {
-	if (this == &Dog)
+Dog &Dog::operator= (const Dog &dog) {
+	if (this == &dog)
 		return *this;
-	this->type = Dog.type;
+	if (this->brain)
+		delete this->brain;
+	this->brain = new Brain();
+	this->brain = dog.brain;
+	this->type = dog.type;
 	std::cout << RED << "Dog operator constructor called! ( ͡~ ͜ʖ ͡°)" << NORMAL << std::endl;
 	return (*this);
 }
