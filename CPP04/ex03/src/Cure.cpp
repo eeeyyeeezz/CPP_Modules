@@ -14,3 +14,7 @@ Cure &Cure::operator=(const Cure &cure){
 	this->type = cure.type;
 	return (*this);
 }
+
+std::string		const		&Cure::getType() const { return (this->type); }
+
+void			Cure::use(ICharacter &target) { std::cout << BRIGHT_GREEN << "* heals " << target.getName() << "'s wounds\n" << NORMAL; }

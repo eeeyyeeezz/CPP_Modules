@@ -19,7 +19,7 @@ void		MateriaSource::learnMateria(AMateria *amateria){
 			id = i;
 	}
 	if (id == -1){
-		std::cout << RED << "Error! Inventory full!\n";
+		std::cout << RED << "Error! Inventory full!\n" << NORMAL;
 		return ;
 	}
 	_amateria[id] = amateria;

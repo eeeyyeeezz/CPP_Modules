@@ -14,3 +14,7 @@ Ice &Ice::operator=(const Ice &ice){
 	this->type = ice.type;
 	return (*this);
 }
+
+std::string		const		&Ice::getType() const { return (this->type); }
+
+void			Ice::use(ICharacter &target) { std::cout << WHITE << "* shoots an ice bolt at " << target.getName() << " *\n" << NORMAL; }
