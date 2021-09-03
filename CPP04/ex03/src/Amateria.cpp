@@ -1,6 +1,8 @@
 #include "../inc/AMateria.hpp"
 
-AMateria::AMateria(std::string const &type) : type(type) { std::cout << BLUE << "AMateria default constructor called (˵ ͡o ͜ʖ ͡o˵)\n" << NORMAL;  }
+AMateria::AMateria() { std::cout << BLUE << "AMateria default constructor called (˵ ͡o ͜ʖ ͡o˵)\n" << NORMAL; }
+
+AMateria::AMateria(std::string const &type) : type(type) { std::cout << BLUE << "AMateria copy constructor called (˵ ͡o ͜ʖ ͡o˵)\n" << NORMAL; }
 
 AMateria::AMateria(const AMateria &amateria) { *this = amateria; }
 

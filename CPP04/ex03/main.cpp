@@ -1,14 +1,15 @@
 #include "inc/AMateria.hpp"
-#include "inc/IMateria.hpp"
+#include "inc/IMateriaSource.hpp"
 #include "inc/ICharacter.hpp"
+#include "inc/MateriaSource.hpp"
 #include "inc/Ice.hpp"
 #include "inc/Cure.hpp"
 
 
 int		main(){
-	// IMateriaSource* src = new MateriaSource();
-	// src->learnMateria(new Ice());
-	// src->learnMateria(new Cure());
+	IMateriaSource* src = new MateriaSource();
+	src->learnMateria(new Ice());
+	src->learnMateria(new Cure());
 
 	// ICharacter* me = new Character("me");
 
@@ -28,5 +29,4 @@ int		main(){
 	// delete src;
 
 	// return 0;
-}
 }
