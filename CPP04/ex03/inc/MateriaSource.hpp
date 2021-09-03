@@ -8,14 +8,13 @@ class MateriaSource : public IMateriaSource{
 	
 	public:
 	MateriaSource();
-	MateriaSource (std::string const &type);
 	MateriaSource(std::string name);
 	MateriaSource(const MateriaSource &materiasource);
 	MateriaSource &operator=	(const MateriaSource &materiasource);
 	~MateriaSource();
 
 	void learnMateria(AMateria *);
-	AMateria *createMateria(std::string const &type);};
-
+	AMateria *createMateria(std::string const &type);
+};
 
 #endif

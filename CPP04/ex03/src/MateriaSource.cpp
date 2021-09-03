@@ -1,6 +1,6 @@
 #include "../inc/MateriaSource.hpp"
 
-MateriaSource::MateriaSource(std::string const &type) { std::cout << BLUE << "MateriaSource default constructor called (˵ ͡o ͜ʖ ͡o˵)\n" << NORMAL; }
+MateriaSource::MateriaSource() { std::cout << BLUE << "MateriaSource default constructor called (˵ ͡o ͜ʖ ͡o˵)\n" << NORMAL; }
 
 MateriaSource::MateriaSource(const MateriaSource &MateriaSource) { *this = MateriaSource; }
 
@@ -23,4 +23,13 @@ void		MateriaSource::learnMateria(AMateria *amateria){
 		return ;
 	}
 	_amateria[id] = amateria;
+}
+
+AMateria			*MateriaSource::createMateria(std::string const &type){
+	for (int i = 0; i < 4; i++){
+		if (_amateria[i] != NULL && _amateria[i]->getType() == type)
+			return (_amateria[i]);
+	}
+	std::cout << RED << "Error! MateriaSource not found!\n" << NORMAL;
+	return (NULL);
 }

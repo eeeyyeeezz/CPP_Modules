@@ -4,14 +4,15 @@
 #include "../../colors.hpp"
 #include "ICharacter.hpp"
 
+class ICharacter;
+
 class AMateria{
 	protected:
 	std::string	type;
 
 	public:
 	AMateria();
-	AMateria (std::string const &type);
-	AMateria(std::string name);
+	AMateria (std::string &type);
 	AMateria(const AMateria &amateria);
 	AMateria &operator=	(const AMateria &amateria);
 	~AMateria();

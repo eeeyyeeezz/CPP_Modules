@@ -2,7 +2,10 @@
 
 Ice::Ice() { std::cout << BLUE << "Ice default constructor called (˵ ͡o ͜ʖ ͡o˵)\n" << NORMAL; }
 
-Ice::Ice(std::string const &type) { std::cout << BLUE << "Ice copy constructor called (˵ ͡o ͜ʖ ͡o˵)\n" << NORMAL; }
+Ice::Ice(std::string const &type){
+	this->type = type;
+	std::cout << BLUE << "Ice copy constructor called (˵ ͡o ͜ʖ ͡o˵)\n" << NORMAL; 	
+}
 
 Ice::Ice(const Ice &Ice) { *this = Ice; }
 
@@ -16,5 +19,7 @@ Ice &Ice::operator=(const Ice &ice){
 }
 
 std::string		const		&Ice::getType() const { return (this->type); }
+
+AMateria		*Ice::clone() const { return (new Ice); }
 
 void			Ice::use(ICharacter &target) { std::cout << WHITE << "* shoots an ice bolt at " << target.getName() << " *\n" << NORMAL; }

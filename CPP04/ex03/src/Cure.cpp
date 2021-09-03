@@ -2,7 +2,10 @@
 
 Cure::Cure() { std::cout << BLUE << "Cure default constructor called (˵ ͡o ͜ʖ ͡o˵)\n" << NORMAL; }
 
-Cure::Cure(std::string const &type) { std::cout << BLUE << "Cure copy constructor called (˵ ͡o ͜ʖ ͡o˵)\n" << NORMAL; }
+Cure::Cure(std::string const &type){
+	this->type = type;
+	std::cout << BLUE << "Cure copy constructor called (˵ ͡o ͜ʖ ͡o˵)\n" << NORMAL; 
+}
 
 Cure::Cure(const Cure &Cure) { *this = Cure; }
 
@@ -17,4 +20,6 @@ Cure &Cure::operator=(const Cure &cure){
 
 std::string		const		&Cure::getType() const { return (this->type); }
 
-void			Cure::use(ICharacter &target) { std::cout << BRIGHT_GREEN << "* heals " << target.getName() << "'s wounds\n" << NORMAL; }
+AMateria		*Cure::clone() const { return (new Cure); }
+
+void			Cure::use(ICharacter &target) { std::cout << WHITE << "* uses an " << this->type << " at " << target.getName() << NORMAL << std::endl; }
