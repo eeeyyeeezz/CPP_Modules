@@ -22,4 +22,4 @@ std::string		const		&Cure::getType() const { return (this->type); }
 
 AMateria		*Cure::clone() const { return (new Cure); }
 
-void			Cure::use(ICharacter &target) { std::cout << WHITE << "* uses an " << this->type << " at " << target.getName() << NORMAL << std::endl; }
+void			Cure::use(ICharacter &target) { std::cout << WHITE << "* heals " << target.getName() << "'s wounds *\n" << NORMAL;}

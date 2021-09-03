@@ -10,7 +10,6 @@ class Character : public ICharacter{
 
 	public:
 	Character();
-	Character (std::string &type);
 	Character(std::string name);
 	Character(const Character &Character);
 	Character &operator=	(const Character &character);

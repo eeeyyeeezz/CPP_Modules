@@ -1,18 +1,32 @@
 #include "../inc/Character.hpp"
 
-Character::Character() { std::cout << BLUE << "Character default constructor called (˵ ͡o ͜ʖ ͡o˵)\n" << NORMAL; }
+Character::Character(){ 
+	for (int i = 0; i < 4; i++)
+		this->_amateria[i] = NULL;
+	std::cout << BLUE << "Character default constructor called (˵ ͡o ͜ʖ ͡o˵)\n" << NORMAL; 
+}
 
-Character::Character(std::string &type) : type(type) { std::cout << BLUE << "Character copy constructor called (˵ ͡o ͜ʖ ͡o˵)\n" << NORMAL; }
-
-Character::Character(std::string name) : type(name) {std::cout << BLUE << "Character copy constructor called (˵ ͡o ͜ʖ ͡o˵)\n" << NORMAL;}
+Character::Character(std::string name) : type(name){
+	for (int i = 0; i < 4; i++)
+		this->_amateria[i] = NULL;
+	std::cout << BLUE << "Character copy constructor called (˵ ͡o ͜ʖ ͡o˵)\n" << NORMAL;
+}
 
 Character::Character(const Character &Character) { *this = Character; }
 
-Character::~Character() { std::cout << RED << "Character destructor Called ( ͡°( ͡° ͜ʖ( ͡° ͜ʖ°)ʖ ͡°) ͡°)\n" << NORMAL; }
+Character::~Character(){ 
+	for (int i = 0; i < 4; i++){
+		delete _amateria[i];
+		_amateria[i] = NULL;
+	}
+	std::cout << RED << "Character destructor Called ( ͡°( ͡° ͜ʖ( ͡° ͜ʖ°)ʖ ͡°) ͡°)\n" << NORMAL; 
+}
 
 Character &Character::operator=(const Character &character){
 	if (this == &character)
 		return (*this);
+	for (int i = 0; i < 4; i++)
+		this->_amateria[i] = character._amateria[i];
 	this->type = character.type;
 	return (*this);
 }

@@ -8,7 +8,6 @@ class MateriaSource : public IMateriaSource{
 	
 	public:
 	MateriaSource();
-	MateriaSource(std::string name);
 	MateriaSource(const MateriaSource &materiasource);
 	MateriaSource &operator=	(const MateriaSource &materiasource);
 	~MateriaSource();
