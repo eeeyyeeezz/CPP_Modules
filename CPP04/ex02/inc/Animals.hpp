@@ -3,9 +3,6 @@
 #include <iostream>
 #include "../../colors.hpp"
 #include "WrongAnimal.hpp"
-#include "Brain.hpp"
-
-class Brain;
 
 class Animal{
 	protected:
@@ -18,14 +15,11 @@ class Animal{
 	virtual	~Animal();
 	Animal &operator=	(const Animal &claptrap);
 
-	virtual void	makeSound()	const;
+	virtual void	makeSound()	const = 0;
 	std::string		getType()	const;
 };
 
 class Dog : public virtual Animal{
-	private:
-	// Brain	*brain;
-		
 	public:
 	Dog();
 	Dog(std::string name);
@@ -38,9 +32,6 @@ class Dog : public virtual Animal{
 };
 
 class Cat : public virtual Animal{
-	private:
-	// Brain	*brain;
-	
 	public:
 	Cat();
 	Cat(std::string name);
@@ -48,8 +39,8 @@ class Cat : public virtual Animal{
 	virtual ~Cat();
 	Cat &operator=	(const Cat &claptrap);
 	
-	void				makeSound()		const;
-	std::string			getType()		const;
+	std::string			getType()	const;
+	void		makeSound()	const;
 };
 
 #endif

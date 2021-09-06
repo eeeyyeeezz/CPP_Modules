@@ -13,6 +13,7 @@ class Brain{
 	Brain &operator=	(const Brain &claptrap);
 	
 	std::string			*getIdeas();
+	void				setIdeas(std::string *ideas);
 };
 
 #endif

@@ -1,4 +1,4 @@
-NAME = Brain
+NAME = Animal
 
 GREEN = "\033[1;32m"
 NORMAL = "\033[0m"
@@ -9,8 +9,5 @@ all:
 
 clean:
 		@rm -rf ${NAME}
-
-leaks:
-	leaks --atExit -- ./${NAME}
 
 re: clean all
