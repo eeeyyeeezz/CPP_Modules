@@ -1,27 +1,16 @@
 #include "inc/Animals.hpp"
 
 int		main(){
-	const	Animal *animal = new Animal("Animal");
-	const	Animal *dog = new Dog("Boby");
-	const	Animal *cat = new Cat("Pes");
+	Animal	*animal[20];
 	
-	const	WrongAnimal *wronganimal = new WrongAnimal("WrongAnimal");
-	const	WrongAnimal *wrongcat = new WrongCat("WrongCat");
+	for (int i = 0; i < 20; i++){
+		if (i % 2 == 0)
+			animal[i] = new Dog;
+		else
+			animal[i] = new Cat;
+	}
 	
-	std::cout << BRIGHT_GREEN << dog->getType() << std::endl;
-	std::cout << BRIGHT_GREEN << cat->getType() << std::endl;
-	std::cout << BRIGHT_GREEN << animal->getType() << std::endl;
-	std::cout << BRIGHT_GREEN << wronganimal->getType() << std::endl;
-	std::cout << BRIGHT_GREEN << wrongcat->getType() << std::endl;
 	
-	dog->makeSound();
-	cat->makeSound();
-	animal->makeSound();
-	wronganimal->makeSound();
-	wrongcat->makeSound();
-	delete animal;
-	delete dog;
-	delete cat;
-	delete wronganimal;
-	delete wrongcat;
+	
+	
 }

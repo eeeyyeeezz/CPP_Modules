@@ -1,4 +1,4 @@
-NAME = Animal
+NAME = Brain
 
 GREEN = "\033[1;32m"
 NORMAL = "\033[0m"
