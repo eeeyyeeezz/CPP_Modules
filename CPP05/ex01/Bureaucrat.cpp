@@ -64,4 +64,4 @@ std::ostream &operator<< (std::ostream &out, const Bureaucrat &bureaucrat){
 	return (out);
 }
 
-Bureaucrat::~Bureaucrat() {   }
+Bureaucrat::~Bureaucrat() { std::cout << RED << "Bureaucrat destructor Called ( ͡°( ͡° ͜ʖ( ͡° ͜ʖ°)ʖ ͡°) ͡°)\n" << NORMAL;  }
