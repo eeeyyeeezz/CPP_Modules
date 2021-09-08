@@ -31,6 +31,17 @@ void					Form::beSigned(Bureaucrat &bureaucrat){
 	}
 }
 
+void					Form::execute(Bureaucrat const &bureaucrat) const{
+	if (!this->is_signed)
+		throw Form::NotSigned();
+	if (bureaucrat.getGrade() > this->grade_exec)
+		throw Form::GradeTooLow();
+}
+
+const		char *Form::NotSigned::what() const throw(){
+	return ("Form is not signed ( ͠° ͟ʖ ͡°)");
+}
+
 const		char *Form::GradeTooLow::what() const throw(){
 	return ("Grade to sign is too low ( ͠° ͟ʖ ͡°)");
 }

@@ -1,7 +1,10 @@
 #include "../inc/RobotomyRequestForm.hpp"
 
-RobotomyForm::RobotomyForm(std::string target) {  }
- 
+RobotomyForm::RobotomyForm(std::string target){
+	this->name = target;
+	std::cout << BLUE << "RobotomyForm copy constructor called (˵ ͡o ͜ʖ ͡o˵)\n" << NORMAL;
+}
+
 RobotomyForm::RobotomyForm(RobotomyForm const &RobotomyForm) { *this = RobotomyForm; }
 
 RobotomyForm &RobotomyForm::operator= (const RobotomyForm &RobotomyForm) {

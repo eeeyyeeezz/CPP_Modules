@@ -57,6 +57,13 @@ void			Bureaucrat::signForm(Form &form){
 		
 }
 
+void			Bureaucrat::executeForm(Form const &form){
+	try{
+		form.execute(*this);
+		std::cout << BRIGHT_GREEN << "Execution is successful ( •̀ᴗ•́ )و\n" << std::endl;
+	} catch (std::exception &exc) { std::cout << BLACK_RED << "EXECUTION ERROR IS: " << RED << exc.what() << NORMAL << std::endl; }
+}
+
 Bureaucrat &Bureaucrat::operator= (const Bureaucrat &bureaucrat) {
 	if (this == &bureaucrat)
 		return *this;

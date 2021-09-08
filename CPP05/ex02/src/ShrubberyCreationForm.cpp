@@ -1,7 +1,11 @@
 #include "../inc/ShrubberyCreationForm.hpp"
 
-Shrubbery::Shrubbery(std::string target) {  }
- 
+Shrubbery::Shrubbery(std::string target){
+	this->name = target;
+	std::cout << BLUE << "Shrubbery copy constructor called (˵ ͡o ͜ʖ ͡o˵)\n" << NORMAL;
+		
+}
+
 Shrubbery::Shrubbery(Shrubbery const &Shrubbery) { *this = Shrubbery; }
 
 Shrubbery &Shrubbery::operator= (const Shrubbery &Shrubbery) {

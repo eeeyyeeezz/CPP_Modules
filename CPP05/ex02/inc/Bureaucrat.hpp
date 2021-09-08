@@ -27,6 +27,7 @@ class Bureaucrat{
 		const	char *what	() const throw();
 	};
 
+	void				executeForm(Form const &form);
 	void				signForm(Form &form);
 	void				decrementGrade();
 	void				decrementGrade(int grade);

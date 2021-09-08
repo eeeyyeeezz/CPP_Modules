@@ -1,6 +1,9 @@
 #include "../inc/PresidentialPardonForm.hpp"
 
-PresidentForm::PresidentForm(std::string target) {  }
+PresidentForm::PresidentForm(std::string target){
+	this->name = target;
+	std::cout << BLUE << "PresidentForm copy constructor called (˵ ͡o ͜ʖ ͡o˵)\n" << NORMAL;
+}
  
 PresidentForm::PresidentForm(PresidentForm const &PresidentForm) { *this = PresidentForm; }
 

@@ -1,8 +1,9 @@
 #ifndef ROBOTOMY
 #define ROBOTOMY
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
-class RobotomyForm{
+class RobotomyForm : public Form{
 	public:
 	RobotomyForm(std::string target);
 	RobotomyForm(RobotomyForm const &robotomyform);
