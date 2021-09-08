@@ -1,14 +1,16 @@
 #ifndef BUREAUCRAT
 #define BUREAUCRAT
-#include "../colors.hpp"
+#include "../../colors.hpp"
 #include "Form.hpp"
 #include <string>
 #include <iostream>
 
+class Form;
+
 class Bureaucrat{
 	private:
 	const std::string	name;
-	int			grade;
+	int					grade;
 
 	public:
 	Bureaucrat();

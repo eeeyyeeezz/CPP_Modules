@@ -51,9 +51,9 @@ void			Bureaucrat::incrementGrade(int grade){
 
 void			Bureaucrat::signForm(Form &form){
 	if (form.getGradeSign() > this->getGrade())
-		std::cout << WHITE << "Bureaucrat " << this->getName() << GREEN << " signs form " << form.getName() << NORMAL << std::endl;
+		std::cout << WHITE << "Bureaucrat " << BLUE << this->getName() << GREEN << " signs form " << WHITE << form.getName() << NORMAL << std::endl;
 	else
-		std::cout << WHITE << "Bureaucrat " << this->getName() << RED << "cant sign form " << form.getName() << NORMAL << std::endl;
+		std::cout << WHITE << "Bureaucrat " << BLUE << this->getName() << RED << " can't sign form " << WHITE << form.getName() << NORMAL << std::endl;
 		
 }
 

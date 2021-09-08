@@ -1,6 +1,9 @@
 #ifndef FORMCLASS
 #define FORMCLASS
 #include "Bureaucrat.hpp"
+#include <iostream>
+
+class Bureaucrat;
 
 class Form{
 	private:
@@ -16,10 +19,10 @@ class Form{
 	~Form();
 	Form &operator=	(const Form &Form);
 	
-	const std::string	getName();
-	const int			getGradeExec();
-	const int			getGradeSign();
-	const bool			getBool();
+	std::string			getName();
+	bool				getBool();
+	int					getGradeExec();
+	int					getGradeSign();
 	void				beSigned(Bureaucrat &bureaucrat);
 	
 	class	GradeTooHigh : public std::exception{
@@ -32,7 +35,7 @@ class Form{
 	
 };
 
-std::ostream &operator<< (std::ostream &out, const Form &form);
+std::ostream &operator<< (std::ostream &out, Form &form);
 
 
 #endif

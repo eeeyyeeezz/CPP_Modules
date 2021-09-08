@@ -1,10 +1,10 @@
-NAME = Bureaucrat
+NAME = Form
 
 GREEN = "\033[1;32m"
 NORMAL = "\033[0m"
 
 all: 
-		@clang++ -std=c++98 -Wall -Wextra -Werror *.cpp -o ${NAME}
+		@clang++ -std=c++98 -Wall -Wextra -Werror src/*.cpp main.cpp -o ${NAME}
 		@echo ${GREEN}"Compile ${NAME} done!"${NORMAL}
 
 clean:
