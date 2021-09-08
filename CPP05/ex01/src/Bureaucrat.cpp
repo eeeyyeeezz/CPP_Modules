@@ -1,4 +1,4 @@
-#include "Bureaucrat.hpp"
+#include "../inc/Bureaucrat.hpp"
 
 Bureaucrat::Bureaucrat() { std::cout << BLUE << "Bureaucrat default constructor called (˵ ͡o ͜ʖ ͡o˵)\n" << NORMAL; }
 

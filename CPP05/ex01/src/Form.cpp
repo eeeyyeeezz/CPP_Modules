@@ -1,4 +1,4 @@
-#include "Form.hpp"
+#include "../inc/Form.hpp"
 
 Form::Form () : is_signed(0), grade_exec(0), grade_sign(0) { std::cout << BLUE << "Form default constructor called (˵ ͡o ͜ʖ ͡o˵)\n" << NORMAL; }
 
