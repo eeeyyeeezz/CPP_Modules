@@ -1,6 +1,7 @@
 #ifndef BUREAUCRAT
 #define BUREAUCRAT
 #include "../colors.hpp"
+#include "Form.hpp"
 #include <iostream>
 
 class Bureaucrat{
@@ -23,11 +24,12 @@ class Bureaucrat{
 		const	char *what	() const throw();
 	};
 
+	void				signForm(Form &form);
 	void				decrementGrade();
 	void				decrementGrade(int grade);
 	void				incrementGrade();
 	void				incrementGrade(int grade);
-	int			getGrade() const;
+	int					getGrade() const;
 	const	std::string	getName() const;
 };
 

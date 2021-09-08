@@ -49,6 +49,14 @@ void			Bureaucrat::incrementGrade(int grade){
 		throw Bureaucrat::GradeTooHigh();
 }
 
+void			Bureaucrat::signForm(Form &form){
+	if (form.getGradeSign() > this->getGrade())
+		std::cout << WHITE << "Bureaucrat " << this->getName() << GREEN << " signs form " << form.getName() << NORMAL << std::endl;
+	else
+		std::cout << WHITE << "Bureaucrat " << this->getName() << RED << "cant sign form " << form.getName() << NORMAL << std::endl;
+		
+}
+
 Bureaucrat &Bureaucrat::operator= (const Bureaucrat &bureaucrat) {
 	if (this == &bureaucrat)
 		return *this;

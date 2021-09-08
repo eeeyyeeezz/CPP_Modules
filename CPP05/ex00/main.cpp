@@ -9,16 +9,15 @@ int		main(){
 	catch (std::exception &exc) { std::cout << BLACK_RED << "ERROR IS: " << RED << exc.what() << NORMAL << std::endl; }
 	std::cout << std::endl;
 	try {
-		Bureaucrat bobby("bobby", 150);
-		std::cout << bobby;
-		bobby.incrementGrade();	
+		Bureaucrat henry("henry", 150);
+		std::cout << henry;
+		henry.incrementGrade();	
 	}
 	catch (std::exception &exc) { std::cout << BLACK_RED << "ERROR IS: " << RED << exc.what() << NORMAL << std::endl; }
 	std::cout << std::endl;
 	try {
-		Bureaucrat bobby("bobby", 50);
-		std::cout << bobby;
-		// bobby.incrementGrade();	
+		Bureaucrat jobie("jobie", 50);
+		std::cout << jobie;
 	}
 	catch (std::exception &exc) { std::cout << BLACK_RED << "ERROR IS: " << RED << exc.what() << NORMAL << std::endl; }
 
