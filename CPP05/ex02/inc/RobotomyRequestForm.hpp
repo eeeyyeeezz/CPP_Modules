@@ -2,6 +2,8 @@
 #define ROBOTOMY
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
+#include <cstdlib>
+#include <ctime>
 
 class RobotomyForm : public Form{
 	public:

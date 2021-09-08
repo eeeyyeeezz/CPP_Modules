@@ -60,7 +60,7 @@ void			Bureaucrat::signForm(Form &form){
 void			Bureaucrat::executeForm(Form const &form){
 	try{
 		form.execute(*this);
-		std::cout << BRIGHT_GREEN << "Execution is successful ( •̀ᴗ•́ )و\n" << std::endl;
+		std::cout << BRIGHT_GREEN << "Execution is successful ( •̀ᴗ•́ )و\n";
 	} catch (std::exception &exc) { std::cout << BLACK_RED << "EXECUTION ERROR IS: " << RED << exc.what() << NORMAL << std::endl; }
 }
 

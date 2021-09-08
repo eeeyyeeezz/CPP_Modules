@@ -48,11 +48,11 @@ const		char *Form::NotSigned::what() const throw(){
 }
 
 const		char *Form::GradeTooLow::what() const throw(){
-	return ("Grade to sign is too low ( ͠° ͟ʖ ͡°)");
+	return ("Grade to sign or exec is too low ( ͠° ͟ʖ ͡°)");
 }
 
 const		char *Form::GradeTooHigh::what() const throw(){
-	return ("Grade too sign is too high ۹( ÒہÓ )۶");
+	return ("Grade too sign or exec is too high ۹( ÒہÓ )۶");
 }
 
 Form &Form::operator= (const Form &form) {

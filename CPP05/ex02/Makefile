@@ -1,4 +1,4 @@
-NAME = Form
+NAME = Forms
 
 GREEN = "\033[1;32m"
 NORMAL = "\033[0m"
