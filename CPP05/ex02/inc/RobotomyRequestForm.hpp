@@ -9,6 +9,9 @@ class RobotomyForm : public Form{
 	RobotomyForm(RobotomyForm const &robotomyform);
 	~RobotomyForm();
 	RobotomyForm &operator=	(const RobotomyForm &robotomyform);
+	
+	virtual void		execute(Bureaucrat const &executor) const;
+	virtual void		action() const;
 };
 
 #endif

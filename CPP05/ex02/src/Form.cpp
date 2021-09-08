@@ -1,8 +1,11 @@
 #include "../inc/Form.hpp"
 
-Form::Form () : grade_exec(0), grade_sign(0), is_signed(0) { std::cout << BLUE << "Form default constructor called (˵ ͡o ͜ʖ ͡o˵)\n" << NORMAL; }
-
 Form::Form(Form const &form) : name(form.name), grade_exec(form.grade_exec), grade_sign(form.grade_sign), is_signed(form.is_signed) { *this = form; }
+
+Form::Form(const std::string name, std::string target, const int grade_exec, const int grade_sign) : 
+name(name), target(target), grade_exec(grade_exec), grade_sign(grade_sign) { 
+	std::cout << BLUE << "Form copy constructor called (˵ ͡o ͜ʖ ͡o˵)\n" << NORMAL; 
+}
 
 Form::Form(const std::string name, const int grade_exec, const int grade_sign) : name(name), grade_exec(grade_exec), grade_sign(grade_sign) { 
 	std::cout << BLUE << "Form copy constructor called (˵ ͡o ͜ʖ ͡o˵)\n" << NORMAL; 
@@ -13,6 +16,8 @@ Form::Form(const std::string name, const int grade_exec, const int grade_sign) :
 }
 
 std::string				Form::getName() { return (this->name); }
+
+std::string				Form::getTarget() const { return (this->target); }
 
 int						Form::getGradeExec() { return (this->grade_exec); }
 

@@ -6,23 +6,24 @@
 class Bureaucrat;
 
 class Form{
-	protected:
-	std::string name;
-	
 	private:
+	std::string			name;
+	std::string			target;
 	const int			grade_exec;
 	const int			grade_sign;
 	bool				is_signed;
 	
 	public:	
-	Form();
 	Form(const std::string name, const int grade_exec, const int grade_sign);
+	Form(const std::string name, std::string target, const int grade_exec, const int grade_sign);
 	Form(Form const &Form);
 	~Form();
 	Form &operator=	(const Form &Form);
 	
-	void				execute(Bureaucrat const &executor) const;
+	virtual void		execute(Bureaucrat const &executor) const;
+	virtual void		action() const = 0;
 	std::string			getName();
+	std::string			getTarget() const;
 	bool				getBool();
 	int					getGradeExec();
 	int					getGradeSign();

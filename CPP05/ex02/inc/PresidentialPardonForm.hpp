@@ -9,6 +9,9 @@ class PresidentForm : public Form{
 	PresidentForm(PresidentForm const &presidentform);
 	~PresidentForm();
 	PresidentForm &operator=	(const PresidentForm &presidentform);
+	
+	virtual void		execute(Bureaucrat const &executor) const;
+	virtual void		action() const;
 };
 
 #endif
