@@ -1,5 +1,6 @@
 #include "Convert.hpp"
 
+
 int			main(int argc, char **argv){
 	std::string array;
 
@@ -9,7 +10,7 @@ int			main(int argc, char **argv){
 	}
 	try{
 		Convert	convert(static_cast<std::string>(argv[1]));
-		
-	} catch (std::exception &exc) { std::cout << BLACK_RED << "ERROR IS: " << RED << exc.what() << NORMAL << std::endl; }
+
+	} catch (std::string &exc) { std::cout << BLACK_RED << "ERROR IS: " << RED << exc << NORMAL << std::endl; }
 
 }

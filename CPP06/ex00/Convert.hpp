@@ -8,7 +8,12 @@ class Convert{
 	private:
 	std::string _string;
 	std::string	_type;
-	std::string	parser(std::string array);
+	int			_int;
+	char		_char;
+	float		_float;
+	double		_double;
+	void		_convert();
+	std::string	_parser(std::string array);
 	
 	public:
 	Convert();
