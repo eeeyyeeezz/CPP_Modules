@@ -9,7 +9,6 @@ Convert::Convert(std::string array) {
 	this->_toInt();
 	this->_toFloat();
 	// std::cout << "[" << _type << "] TYPE\n";
-
 }
 
 Convert &Convert::operator= (const Convert &convert) {
@@ -56,24 +55,41 @@ void				Convert::_toInt(){
 			std::cout << WHITE << "Int : " << BLUE << strInt << std::endl;
 		else 
 			std::cout << WHITE << "Int : " << RED << "impossible. Int overflow ¯\\_(ツ)_/¯" << std::endl;
+		return ;
 	}
 	else if (this->_type == "char"){
 		char charStr = this->_string[0];
 		std::cout << WHITE << "Int : " << BLUE << static_cast<int>(charStr) << std::endl;
 		return ;
 	}
-	std::cout << WHITE << "Int : " << RED << "impossible..." << std::endl;
+	std::cout << WHITE << "Int : " << BLUE << "nan" << std::endl;
 }
 
 void				Convert::_toFloat(){
-	if (this->_type == "nan" || this->_type == "nanf"){
-		std::cout << WHITE << "Float : " << BLUE << "nanf" << std::endl;
-		return ;
-	}
 	if (isInfFloat(this->_type)){
 		std::cout << WHITE << "Float : " << BLUE << this->_type << std::endl;
 		return ;
 	}
+	else if (this->_type == "float" || this->_type == "int"){
+		double strFloat = atof(this->_string.c_str());
+		if (strFloat >= FLT_MIN && strFloat <= FLT_MAX)
+			std::cout << WHITE << "Float : " << BLUE << strFloat << "f" << std::endl;
+		else
+			std::cout << WHITE << "Float : " << RED << "impossible. Float overflow ¯\\_(ツ)_/¯" << std::endl;
+		if (strFloat >= DBL_MIN && strFloat <= DBL_MAX)
+			std::cout << WHITE << "Double : " << BLUE << strFloat << std::endl;
+		else
+			std::cout << WHITE << "Double : " << RED << "impossible. Double overflow ¯\\_(ツ)_/¯" << std::endl;
+		return ;
+	}
+	else if (this->_type == "char"){
+		char charStr = this->_string[0];
+		std::cout << WHITE << "Float : " << BLUE << static_cast<float>(charStr) << "f" << std::endl;
+		std::cout << WHITE << "Double : " << BLUE << static_cast<double>(charStr) << std::endl;
+		return ;
+	}
+	std::cout << WHITE << "Float : " << BLUE << "nanf" << std::endl;
+	std::cout << WHITE << "Double : " << BLUE << "nan" << std::endl;
 }
 
 std::string			Convert::_parser(std::string array){

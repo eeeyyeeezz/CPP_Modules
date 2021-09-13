@@ -5,6 +5,8 @@
 #include <ctype.h>
 #include <limits.h>
 #include <stdlib.h>
+#include <float.h> 
+#include <iomanip>
 
 class Convert{
 	private:
@@ -15,7 +17,6 @@ class Convert{
 	void		_toInt();
 	void		_toChar();
 	void		_toFloat();
-	void		_toDouble();
 
 	public:
 	Convert();
