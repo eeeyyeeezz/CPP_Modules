@@ -8,7 +8,6 @@ Convert::Convert(std::string array) {
 	this->_toChar();
 	this->_toInt();
 	this->_toFloat();
-	// std::cout << "[" << _type << "] TYPE\n";
 }
 
 Convert &Convert::operator= (const Convert &convert) {
@@ -47,8 +46,10 @@ static bool				isInfFloat(std::string type){
 }
 
 void				Convert::_toInt(){
-	if (isInfInt(this->_type))
+	if (isInfInt(this->_type)){
 		std::cout << WHITE << "Int : " << BLUE << this->_type << std::endl;
+		return ;
+	}
 	else if (this->_type == "int" || this->_type == "float"){
 		long int strInt = atol(this->_string.c_str());
 		if (strInt >= INT_MIN && strInt <= INT_MAX)
@@ -68,6 +69,7 @@ void				Convert::_toInt(){
 void				Convert::_toFloat(){
 	if (isInfFloat(this->_type)){
 		std::cout << WHITE << "Float : " << BLUE << this->_type << std::endl;
+		std::cout << WHITE << "Double : " << BLUE << this->_type << std::endl;
 		return ;
 	}
 	else if (this->_type == "float" || this->_type == "int"){
