@@ -1,8 +1,7 @@
 #include "template.hpp"	
 #define MAX_VAL 750
 
-int main(int, char**)
-{
+int main(){
     int a = 200;
 	int b = 300;
 	
@@ -21,8 +20,8 @@ int main(int, char**)
 	std::cout << WHITE << "min( float_a, float_b ) = " << BLUE << ::min( float_a, float_b ) << NORMAL << std::endl << std::endl;
 
 
-	std::string c = "chaine1";
-	std::string d = "chaine2";
+	std::string c = "aboba1";
+	std::string d = "aboba228";
 	
 	std::cout << WHITE << "string c = " BLUE << c << WHITE << ", string d = " << BLUE << d << NORMAL << std::endl;
 	swap(c, d);
