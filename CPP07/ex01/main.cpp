@@ -11,5 +11,5 @@ int		main(){
 	std::cout << "--------------------------" << std::endl;
 	iter(int_array, 6, print);
 	std::cout << "--------------------------" << std::endl;
-	// iter(str, 25, print); rofl
+	// iter(str, 25, print); // rofl
 }
