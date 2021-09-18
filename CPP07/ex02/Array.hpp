@@ -17,21 +17,20 @@ class Array{
 		std::cout << BLUE << "Array copy (unsigned int) constructor called (˵ ͡o ͜ʖ ͡o˵)\n" << NORMAL;
 	}
 
-	T		getArray() { return (this->_array); }
-	size_t	getSize() { return (this->_size); }
-	
-	~Array <T> () { 
-		if (this->_array)
-			delete[] this->_array;
-		std::cout << RED << "Array destructor Called ( ͡°( ͡° ͜ʖ( ͡° ͜ʖ°)ʖ ͡°) ͡°)\n" << NORMAL; 
+	Array <T> (const Array &copy) { 
+		std::cout << BLUE << "Array operator constructor called! ( ͡~ ͜ʖ ͡°)" << NORMAL << std::endl;
+		*this = copy; 
 	}
 
 	Array &operator= (const Array &array) {
 		if (this == &array)
 			return *this;
-		this->_string = array._string;
-		this->_size = array._type;
-		std::cout << RED << "Array operator constructor called! ( ͡~ ͜ʖ ͡°)" << NORMAL << std::endl;
+		if (this->_size != array._size)
+			throw std::exception();
+		for (int i = 0; array._array[i]; i++)
+			this->_array[i] = array._array[i];
+		this->_size = array._size;
+		std::cout << BLUE << "Array operator constructor called! ( ͡~ ͜ʖ ͡°)" << NORMAL << std::endl;
 		return (*this);
 	}
 
@@ -47,6 +46,13 @@ class Array{
 		return (this->_array[n]);
 	}
 
+	size_t	getSize() { return (this->_size); }
+	
+	~Array <T> () { 
+		if (this->_array)
+			delete[] this->_array;
+		std::cout << RED << "Array destructor Called ( ͡°( ͡° ͜ʖ( ͡° ͜ʖ°)ʖ ͡°) ͡°)\n" << NORMAL; 
+	}
 };
 
 #endif

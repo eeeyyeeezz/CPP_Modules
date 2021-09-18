@@ -10,4 +10,7 @@ all:
 clean:
 		@rm -rf ${NAME}
 
+leaks:
+	leaks --atExit -- ./${NAME}
+
 re: clean all

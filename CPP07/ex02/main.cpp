@@ -15,10 +15,14 @@ int main()
 	std::cout << WHITE << "[1] is : " << BLUE << unsignedArray[1] << NORMAL << std::endl;
 	std::cout << std::endl;
 	
-	
+	Array <unsigned int> unsignedArrayTwo(2);
+	unsignedArrayTwo = unsignedArray;
+	std::cout << WHITE << "Size is : " << BLUE << unsignedArrayTwo.getSize() << NORMAL << std::endl;
+	std::cout << WHITE << "[0] is : " << BLUE << unsignedArrayTwo[0] << NORMAL << std::endl;
+	std::cout << WHITE << "[1] is : " << BLUE << unsignedArrayTwo[1] << NORMAL << std::endl;
+	std::cout << std::endl;
 
-
-	Array <unsigned int> outOfRange(5);
-	outOfRange[10] = 2;
+	// Array <unsigned int> outOfRange(5);
+	// outOfRange[10] = 2;
 	} catch (std::exception &exc) { std::cout << BLACK_RED << "ERROR IS : " << RED << exc.what() << NORMAL << std::endl; }
 }
