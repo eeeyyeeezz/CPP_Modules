@@ -25,27 +25,26 @@ const		char *Bureaucrat::GradeTooHigh::what() const throw(){
 }
 
 void			Bureaucrat::decrementGrade(){ 
-	this->grade -= 1; 
-	if (grade < 1)
+	this->grade += 1; 
+	if (grade > 150)
 		throw Bureaucrat::GradeTooLow();
 }
 
 void			Bureaucrat::decrementGrade(int grade){ 
-	this->grade -= grade; 
-	if (grade < 1)
+	this->grade += grade; 
+	if (grade > 150)
 		throw Bureaucrat::GradeTooLow();
 }
 
 void			Bureaucrat::incrementGrade(){
-	this->grade += 1
-	;
-	if (grade > 150)
+	this->grade -= 1;
+	if (grade < 1)
 		throw Bureaucrat::GradeTooHigh();
 }
 
 void			Bureaucrat::incrementGrade(int grade){
-	this->grade += grade;
-	if (grade > 150)
+	this->grade -= grade;
+	if (grade < 1)
 		throw Bureaucrat::GradeTooHigh();
 }
 

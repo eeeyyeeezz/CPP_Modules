@@ -10,9 +10,9 @@ name(name), target(target), grade_exec(grade_exec), grade_sign(grade_sign) {
 Form::Form(const std::string name, const int grade_exec, const int grade_sign) : name(name), grade_exec(grade_exec), grade_sign(grade_sign) { 
 	std::cout << BLUE << "Form copy constructor called (˵ ͡o ͜ʖ ͡o˵)\n" << NORMAL; 
 	if (grade_exec < 1 || grade_sign < 1)
-		throw Form::GradeTooLow();
-	else if (grade_exec > 150 || grade_sign > 150)
 		throw Form::GradeTooHigh();
+	// else if (grade_exec > 150 || grade_sign > 150)
+	// 	throw Form::GradeTooHigh();
 }
 
 std::string				Form::getName() { return (this->name); }
@@ -28,7 +28,7 @@ bool					Form::getBool() { return (this->is_signed); }
 void					Form::beSigned(Bureaucrat &bureaucrat){
 	if (bureaucrat.getGrade() > this->grade_sign){
 		bureaucrat.signForm(*this);
-		throw Form::GradeTooLow();
+		throw Form::GradeTooHigh();
 	}
 	else{
 		bureaucrat.signForm(*this);
@@ -40,16 +40,16 @@ void					Form::execute(Bureaucrat const &bureaucrat) const{
 	if (!this->is_signed)
 		throw Form::NotSigned();
 	if (bureaucrat.getGrade() > this->grade_exec)
-		throw Form::GradeTooLow();
+		throw Form::GradeTooHigh();
 }
 
 const		char *Form::NotSigned::what() const throw(){
 	return ("Form is not signed ( ͠° ͟ʖ ͡°)");
 }
 
-const		char *Form::GradeTooLow::what() const throw(){
-	return ("Grade to sign or exec is too low ( ͠° ͟ʖ ͡°)");
-}
+// const		char *Form::GradeTooLow::what() const throw(){
+// 	return ("Grade to sign or exec is too low ( ͠° ͟ʖ ͡°)");
+// }
 
 const		char *Form::GradeTooHigh::what() const throw(){
 	return ("Grade too sign or exec is too high ۹( ÒہÓ )۶");

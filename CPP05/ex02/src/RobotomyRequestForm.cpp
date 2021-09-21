@@ -12,7 +12,10 @@ RobotomyForm &RobotomyForm::operator= (const RobotomyForm &RobotomyForm) {
 }
 
 void		RobotomyForm::action() const {
-	if (rand() % 2)
+	srand(time(0));
+	int rand = std::rand();
+
+	if (rand % 2)
 		std::cout << WHITE << this->getTarget() << " has been" << BRIGHT_GREEN << " successfully" << WHITE << " robotomized ( ★^O^★ )\n";
 	else
 		std::cout << WHITE << this->getTarget() << " has been" << BLACK_RED << " unsuccessfully" << WHITE << " robotomized (´-ι_-｀)\n";

@@ -38,9 +38,9 @@ class Form{
 		const	char *what	() const throw();
 	};
 
-	class	GradeTooLow : public std::exception{
-		const	char *what	() const throw();
-	};
+	// class	GradeTooLow : public std::exception{
+	// 	const	char *what	() const throw();
+	// };
 	
 };
 
