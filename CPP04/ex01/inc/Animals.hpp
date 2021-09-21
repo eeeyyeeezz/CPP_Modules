@@ -24,7 +24,7 @@ class Animal{
 
 class Dog : public virtual Animal{
 	private:
-	// Brain	*brain;
+    Brain	*brain;
 		
 	public:
 	Dog();
@@ -39,7 +39,7 @@ class Dog : public virtual Animal{
 
 class Cat : public virtual Animal{
 	private:
-	// Brain	*brain;
+	 Brain	*brain;
 	
 	public:
 	Cat();
