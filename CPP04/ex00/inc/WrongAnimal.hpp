@@ -14,7 +14,7 @@ class WrongAnimal{
 	WrongAnimal &operator=	(const WrongAnimal &claptrap);
 	
 	std::string			getType()	const;
-	virtual void		makeSound()	const;
+	void		makeSound()	const;
 };
 
 class WrongCat : virtual public WrongAnimal{
