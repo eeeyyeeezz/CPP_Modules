@@ -67,9 +67,6 @@ void				Convert::_toInt(){
 }
 
 void				Convert::_toFloat(){
-	// std::cout << std::fixed << std::setprecision(1) << tempFloat << "f";
-
-
 	if (isInfFloat(this->_type)){
 		std::cout << WHITE << "Float : " << BLUE << this->_type << std::endl;
 		std::cout << WHITE << "Double : " << BLUE << this->_type << std::endl;
