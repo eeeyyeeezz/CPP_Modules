@@ -1,6 +1,6 @@
 #include "Convert.hpp"
 
-Convert::Convert() : _type("None") { std::cout << BLUE << "Convert default constructor called (˵ ͡o ͜ʖ ͡o˵)\n" << NORMAL; }
+Convert::Convert() : _type("None") { }
 
 Convert::Convert(std::string array) {
 	this->_string = array;
@@ -73,15 +73,10 @@ void				Convert::_toFloat(){
 		return ;
 	}
 	else if (this->_type == "float" || this->_type == "int"){
-		double strFloat = atof(this->_string.c_str());
-		if (strFloat >= FLT_MIN && strFloat <= FLT_MAX)
-			std::cout << WHITE << "Float : " << BLUE << std::fixed << std::setprecision(1) << strFloat << "f" << std::endl;
-		else
-			std::cout << WHITE << "Float : " << RED << "impossible. Float overflow ¯\\_(ツ)_/¯" << std::endl;
-		if (strFloat >= DBL_MIN && strFloat <= DBL_MAX)
-			std::cout << WHITE << "Double : " << BLUE << std::fixed << std::setprecision(1) << strFloat << std::endl;
-		else
-			std::cout << WHITE << "Double : " << RED << "impossible. Double overflow ¯\\_(ツ)_/¯" << std::endl;
+		double strDouble = atof(this->_string.c_str());
+		float strFloat = atof(this->_string.c_str());
+		std::cout << WHITE << "Float : " << BLUE << std::fixed << std::setprecision(1) << strFloat << "f" << std::endl;
+		std::cout << WHITE << "Double : " << BLUE << std::fixed << std::setprecision(1) << strDouble << std::endl;
 		return ;
 	}
 	else if (this->_type == "char"){

@@ -8,7 +8,6 @@ class B : public Base { };
 class C : public Base { };
 
 Base *generate(){
-	srand(time(0));
 	int rand = std::rand();
 
 	if (!(rand % 3)){ return (new A); } 
@@ -40,6 +39,7 @@ void	identify(Base &ptr){
 }
 
 int		main(){	
+	srand(time(0));
 	Base	*ptr = generate();
 	identify(ptr);
 
