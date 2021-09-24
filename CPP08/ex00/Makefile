@@ -1,11 +1,13 @@
-NAME = easyFind
+NAME = easyfind
 
-all: ${NAME}
+GREEN = "\033[1;32m"
+NORMAL = "\033[0m"
 
-${NAME}:
-	clang++ -std=c++98 -Wall -Wextra -Werror megaphone.cpp -o ${NAME}
-	
+all: 
+		@clang++ -std=c++98 -Wall -Wextra -Werror *.cpp -o ${NAME}
+		@echo ${GREEN}"Compile ${NAME} done!"${NORMAL}
+
 clean:
-	rm -rf ${NAME}
-	
+		@rm -rf ${NAME}
+
 re: clean all
