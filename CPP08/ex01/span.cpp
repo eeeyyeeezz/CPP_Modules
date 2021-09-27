@@ -4,6 +4,16 @@ Span::Span() { std::cout << BLUE << "Span default constructor called (˵ ͡o ͜�
 
 Span::Span(unsigned int	N) : _size(N) { std::cout << BLUE << "Span copy (unsigned int) constructor called (˵ ͡o ͜ʖ ͡o˵)\n" << NORMAL; }
 
+Span::Span(Span const &span) { *this = span; }
+
+Span &Span::operator= (const Span &span) {
+	if (this == &span)
+		return *this;
+	this->_vector = span._vector;
+	this->_size = span._size;
+	std::cout << RED << "Span operator constructor called! ( ͡~ ͜ʖ ͡°)" << NORMAL << std::endl;
+	return (*this);
+}
 
 unsigned int			Span::getSize() { return (this->_size); }
 
@@ -19,7 +29,6 @@ void					Span::printVector(){
 	}
 }
 
-
 void					Span::addNumber(int number){
 	if (this->getVectorSize() >= this->_size)
 		throw std::string("Vector limit exception");
@@ -31,6 +40,24 @@ void					Span::addNumber(std::vector<int>::iterator begin, std::vector<int>::ite
 		this->addNumber(*begin);
 		begin++;
 	}
+}
+
+void					Span::sortVector() { std::sort(_vector.begin(), _vector.end()); } 
+
+int						Span::longestSpan(){ return (*std::max_element(this->_vector.begin(), this->_vector.end()) - *std::min_element(this->_vector.begin(), this->_vector.end())); }
+
+int						Span::shortestSpan(){
+	std::vector<int>::iterator begin = this->_vector.begin();
+	std::vector<int>::iterator end = this->_vector.end();
+	int			shortest;
+
+	// shortest = std::max(this->_vector.begin(), this->_vector.end());
+	while (begin != end){
+		
+		shortest = *begin - *(begin + 1);
+		begin++;
+	}
+	return(0);
 }
 
 Span::~Span() { std::cout << RED << "Span destructor Called ( ͡°( ͡° ͜ʖ( ͡° ͜ʖ°)ʖ ͡°) ͡°)\n" << NORMAL; }

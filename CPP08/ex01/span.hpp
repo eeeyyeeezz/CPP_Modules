@@ -20,6 +20,7 @@ class Span{
 
 	void			addNumber(int number);
 	void			addNumber(std::vector<int>::iterator begin, std::vector<int>::iterator end);
+	void			sortVector();
 	void			printVector();
 	unsigned int	getVectorSize();
 	unsigned int	getSize();
