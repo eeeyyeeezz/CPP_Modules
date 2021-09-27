@@ -51,7 +51,7 @@ class Array{
 	~Array <T> () { 
 		if (this->_array)
 			delete[] this->_array;
-		std::cout << RED << "Array destructor Called ( ͡°( ͡° ͜ʖ( ͡° ͜ʖ°)ʖ ͡°) ͡°)\n" << NORMAL; 
+		std::cout << RED << "Array destructor Called ( ͡°( ͡° ͜ʖ( ͡° ͜ʖ°)ʖ ͡°) ͡°)\n" << NORMAL;
 	}
 };
 

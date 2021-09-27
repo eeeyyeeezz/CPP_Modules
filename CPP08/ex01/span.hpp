@@ -1,12 +1,15 @@
 #ifndef FT_SPAN
 #define FT_SPAN
+#include "../colors.hpp"
+#include <stdlib.h>
 #include <iostream>
 #include <vector>
 #include <algorithm>
 
 class Span{
 	private:
-	unsigned int N;
+	std::vector<int>	_vector;
+	unsigned int		_size;
 
 	public:
 	Span();
@@ -15,6 +18,13 @@ class Span{
 	~Span();
 	Span &operator=	(const Span &span);
 
+	void			addNumber(int number);
+	void			addNumber(std::vector<int>::iterator begin, std::vector<int>::iterator end);
+	void			printVector();
+	unsigned int	getVectorSize();
+	unsigned int	getSize();
+	int				shortestSpan();
+	int				longestSpan();
 };
 
 #endif
