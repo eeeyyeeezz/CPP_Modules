@@ -50,14 +50,19 @@ int						Span::shortestSpan(){
 	std::vector<int>::iterator begin = this->_vector.begin();
 	std::vector<int>::iterator end = this->_vector.end();
 	int			shortest;
+	int			tmp;
 
-	// shortest = std::max(this->_vector.begin(), this->_vector.end());
+	shortest = std::abs(std::abs(*begin) - std::abs(*(begin + 1)));
+	// std::cout << std::endl << shortest << std::endl;
+	// std::cout << *begin << std::endl;
+	// std::cout << *(begin + 1) << std::endl;
 	while (begin != end){
-		
-		shortest = *begin - *(begin + 1);
+		tmp = std::abs(std::abs(*begin) - std::abs(*(begin + 1)));
+		if (tmp < shortest)
+			shortest = tmp;
 		begin++;
 	}
-	return(0);
+	return(shortest);
 }
 
 Span::~Span() { std::cout << RED << "Span destructor Called ( ͡°( ͡° ͜ʖ( ͡° ͜ʖ°)ʖ ͡°) ͡°)\n" << NORMAL; }

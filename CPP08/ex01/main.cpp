@@ -25,17 +25,29 @@ int		main(){
 	std::cout << WHITE << "SIZE VECTOR: [" << BLUE << span.getVectorSize() << WHITE << "]" << NORMAL << std::endl;
 	
 	std::cout << WHITE"-------------------------------"NORMAL << std::endl;
+	span.sortVector();
 	std::cout << WHITE << "LONGEST SPAN: [" << BLUE << span.longestSpan() << WHITE << "]" NORMAL << std::endl;
-	// std::cout << WHITE << "SHORTEST SPAN: [" << BLUE << span.shortestSpan() << WHITE << "]" NORMAL << std::endl;
+	std::cout << WHITE << "SHORTEST SPAN: [" << BLUE << span.shortestSpan() << WHITE << "]" NORMAL << std::endl;
 	
 
 
 	std::cout << WHITE"-------------------------------"NORMAL << std::endl;
 	std::cout << WHITE "[" RED << "     SORTED SPAN VECTOR      " << WHITE "]" NORMAL << std::endl;
 	std::cout << WHITE"-------------------------------"NORMAL << std::endl;
-	span.sortVector();
 	span.printVector();
 
+	std::cout << WHITE"-------------------------------"NORMAL << std::endl;
+	std::cout << WHITE "[" RED << "        INT VECTOR [5]       " << WHITE "]" NORMAL << std::endl;
+	std::cout << WHITE"-------------------------------"NORMAL << std::endl;
+	Span		intSpan(5);
+
+	intSpan.addNumber(0);
+	intSpan.addNumber(3);
+	intSpan.addNumber(20);
+	intSpan.addNumber(-50);
+	intSpan.addNumber(42);
+
+	intSpan.printVector();
 
 	// try {
 	// 	span.addNumber(-400);
