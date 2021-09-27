@@ -34,13 +34,13 @@ int		main(){
 	std::cout << WHITE"-------------------------------"NORMAL << std::endl;
 	std::cout << WHITE "[" RED << "     SORTED SPAN VECTOR      " << WHITE "]" NORMAL << std::endl;
 	std::cout << WHITE"-------------------------------"NORMAL << std::endl;
+	span.sortVector();
 	span.printVector();
 
 	std::cout << WHITE"-------------------------------"NORMAL << std::endl;
 	std::cout << WHITE "[" RED << "        INT VECTOR [5]       " << WHITE "]" NORMAL << std::endl;
 	std::cout << WHITE"-------------------------------"NORMAL << std::endl;
 	Span		intSpan(5);
-
 	intSpan.addNumber(0);
 	intSpan.addNumber(3);
 	intSpan.addNumber(20);
@@ -48,8 +48,15 @@ int		main(){
 	intSpan.addNumber(42);
 
 	intSpan.printVector();
-
-	// try {
-	// 	span.addNumber(-400);
-	// }	catch (std::string exc) { std::cout << BLACK_RED << "ERROR IS: " << RED << exc << NORMAL << std::endl; }
+	intSpan.sortVector();
+	std::cout << WHITE << "LONGEST SPAN: [" << BLUE << intSpan.longestSpan() << WHITE << "]" NORMAL << std::endl;
+	std::cout << WHITE << "SHORTEST SPAN: [" << BLUE << intSpan.shortestSpan() << WHITE << "]" NORMAL << std::endl;
+	
+	
+	std::cout << WHITE"-------------------------------"NORMAL << std::endl;
+	std::cout << WHITE "[" RED << "   INT VECTOR [5] + ADD NUMBER  " << WHITE "]" NORMAL << std::endl;
+	std::cout << WHITE"-------------------------------"NORMAL << std::endl;
+	try {
+		intSpan.addNumber(-400);
+	}	catch (std::string exc) { std::cout << BLACK_RED << "ERROR IS: " << RED << exc << NORMAL << std::endl; }
 }
