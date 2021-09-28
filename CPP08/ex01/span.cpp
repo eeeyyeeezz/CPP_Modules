@@ -59,29 +59,28 @@ void					Span::addNumber(Span &span){
 
 void					Span::sortVector() { std::sort(_vector.begin(), _vector.end()); } 
 
-int						Span::longestSpan(){ 
+unsigned int						Span::longestSpan(){ 
 	if (this->getVectorSize() <= 1)
 		throw std::string("Only one element in vector!");
-	return (std::abs(*std::max_element(this->_vector.begin(), this->_vector.end()) - *std::min_element(this->_vector.begin(), this->_vector.end()))); 
+	return (*std::max_element(this->_vector.begin(), this->_vector.end()) - *std::min_element(this->_vector.begin(), this->_vector.end())); 
 }
 
-int						Span::shortestSpan(){
+unsigned int						Span::shortestSpan(){
 	if (this->getVectorSize() <= 1)
 		throw std::string("Only one element in vector!");
 	this->sortVector();
 	std::vector<int>::iterator begin = this->_vector.begin();
 	std::vector<int>::iterator end = this->_vector.end();
-	int			shortest;
-	int			tmp;
+	unsigned int			shortest = UINT_MAX;
+	unsigned int			tmp;
 
-	shortest = std::abs(std::abs(*begin) - std::abs(*(begin + 1)));
-	while (begin != end){
-		tmp = std::abs(std::abs(*begin) - std::abs(*(begin + 1)));
+	while (begin != end - 1){
+		tmp = static_cast<unsigned int>(*(begin + 1) - *begin);
 		if (tmp < shortest)
 			shortest = tmp;
 		begin++;
 	}
-	return(shortest);
+	return (shortest);
 }
 
 Span::~Span() { std::cout << RED << "Span destructor Called ( ͡°( ͡° ͜ʖ( ͡° ͜ʖ°)ʖ ͡°) ͡°)\n" << NORMAL; }

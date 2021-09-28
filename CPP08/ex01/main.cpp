@@ -41,8 +41,8 @@ int		main(){
 	std::cout << WHITE"-------------------------------"NORMAL << std::endl;
 	Span			maxInt(2);
 
-	maxInt.addNumber(-2147483648);
 	maxInt.addNumber(2147483647);
+	maxInt.addNumber(-2147483648);
 	maxInt.printVector();
 	std::cout << WHITE << "LONGEST SPAN: [" << BLUE << maxInt.longestSpan() << WHITE << "]" NORMAL << std::endl;
 	std::cout << WHITE << "SHORTEST SPAN: [" << BLUE << maxInt.shortestSpan() << WHITE << "]" NORMAL << std::endl;
@@ -53,7 +53,7 @@ int		main(){
 	std::cout << WHITE"-------------------------------"NORMAL << std::endl;
 	Span		intSpan(5);
 	intSpan.addNumber(0);
-	intSpan.addNumber(3);
+	intSpan.addNumber(-5);
 	intSpan.addNumber(20);
 	intSpan.addNumber(-50);
 	intSpan.addNumber(42);

@@ -26,8 +26,8 @@ class Span{
 	void			printVector();
 	unsigned int	getVectorSize();
 	unsigned int	getSize();
-	int				shortestSpan();
-	int				longestSpan();
+	unsigned int				shortestSpan();
+	unsigned int				longestSpan();
 };
 
 #endif
