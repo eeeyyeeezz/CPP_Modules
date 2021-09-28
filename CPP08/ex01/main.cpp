@@ -1,23 +1,12 @@
 #include "span.hpp"
 
 int		main(){
-	srand(time(0));
 	Span				span(10);
-	
-	std::vector<int>			intArray;
-	for (int i = 0; i < 10; i++)
-		intArray.push_back((std::rand() % 50) - 25);
-	std::vector<int>::iterator	begin = intArray.begin();
-	std::vector<int>::iterator	end = intArray.end();
-	for (; begin != end; begin++)
-		std::cout << WHITE << "RANDOM INT[10] VECTOR: [" << BLUE << *begin << WHITE << "]" << NORMAL << std::endl; 
-	begin = intArray.begin();
-	end = intArray.end();
 	std::cout << WHITE"-------------------------------"NORMAL << std::endl;
-	std::cout << WHITE "[" RED << " SPAN VECTOR AFTER ADD NUMBER " << WHITE "]" NORMAL << std::endl;
+	std::cout << WHITE "[" RED << " SPAN[10] VECTOR AFTER ADD NUMBER " << WHITE "]" NORMAL << std::endl;
 	std::cout << WHITE"-------------------------------"NORMAL << std::endl;
 
-	span.addNumber(begin, end);
+	span.addNumber(span);
 	span.printVector();
 
 	std::cout << WHITE"-------------------------------"NORMAL << std::endl;
@@ -25,17 +14,39 @@ int		main(){
 	std::cout << WHITE << "SIZE VECTOR: [" << BLUE << span.getVectorSize() << WHITE << "]" << NORMAL << std::endl;
 	
 	std::cout << WHITE"-------------------------------"NORMAL << std::endl;
-	span.sortVector();
-	std::cout << WHITE << "LONGEST SPAN: [" << BLUE << span.longestSpan() << WHITE << "]" NORMAL << std::endl;
-	std::cout << WHITE << "SHORTEST SPAN: [" << BLUE << span.shortestSpan() << WHITE << "]" NORMAL << std::endl;
-	
-
-
-	std::cout << WHITE"-------------------------------"NORMAL << std::endl;
 	std::cout << WHITE "[" RED << "     SORTED SPAN VECTOR      " << WHITE "]" NORMAL << std::endl;
 	std::cout << WHITE"-------------------------------"NORMAL << std::endl;
 	span.sortVector();
 	span.printVector();
+
+	std::cout << WHITE"-------------------------------"NORMAL << std::endl;
+	std::cout << WHITE << "LONGEST SPAN: [" << BLUE << span.longestSpan() << WHITE << "]" NORMAL << std::endl;
+	std::cout << WHITE << "SHORTEST SPAN: [" << BLUE << span.shortestSpan() << WHITE << "]" NORMAL << std::endl;
+
+
+	std::cout << WHITE"-------------------------------"NORMAL << std::endl;
+	std::cout << WHITE "[" RED << "        INT VECTOR [1]       " << WHITE "]" NORMAL << std::endl;
+	std::cout << WHITE"-------------------------------"NORMAL << std::endl;
+	Span		span_only(1);
+
+	span_only.addNumber(500);
+	span_only.printVector();
+	try{
+		std::cout << WHITE << "LONGEST SPAN: [" << BLUE << span_only.longestSpan() << WHITE << "]" NORMAL << std::endl;
+		std::cout << WHITE << "SHORTEST SPAN: [" << BLUE << span_only.shortestSpan() << WHITE << "]" NORMAL << std::endl;
+	}	catch (std::string exc) { std::cout << BLACK_RED << "ERROR IS: " << RED << exc << NORMAL << std::endl; }
+
+	std::cout << WHITE"-------------------------------"NORMAL << std::endl;
+	std::cout << WHITE "[" RED << " INT VECTOR [2] MAX_INT MIN_INT " << WHITE "]" NORMAL << std::endl;
+	std::cout << WHITE"-------------------------------"NORMAL << std::endl;
+	Span			maxInt(2);
+
+	maxInt.addNumber(-2147483648);
+	maxInt.addNumber(2147483647);
+	maxInt.printVector();
+	std::cout << WHITE << "LONGEST SPAN: [" << BLUE << maxInt.longestSpan() << WHITE << "]" NORMAL << std::endl;
+	std::cout << WHITE << "SHORTEST SPAN: [" << BLUE << maxInt.shortestSpan() << WHITE << "]" NORMAL << std::endl;
+
 
 	std::cout << WHITE"-------------------------------"NORMAL << std::endl;
 	std::cout << WHITE "[" RED << "        INT VECTOR [5]       " << WHITE "]" NORMAL << std::endl;

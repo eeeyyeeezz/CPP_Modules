@@ -42,20 +42,39 @@ void					Span::addNumber(std::vector<int>::iterator begin, std::vector<int>::ite
 	}
 }
 
+void					Span::addNumber(Span &span){
+	srand(time(0));
+	std::vector<int>			intArray;
+	for (int i = 0; i < 10; i++)
+		intArray.push_back((std::rand() % 50) - 25);
+	std::vector<int>::iterator	begin = intArray.begin();
+	std::vector<int>::iterator	end = intArray.end();
+
+	while (begin != end){
+		span.addNumber(*begin);
+		begin++;
+	}
+}
+
+
 void					Span::sortVector() { std::sort(_vector.begin(), _vector.end()); } 
 
-int						Span::longestSpan(){ return (*std::max_element(this->_vector.begin(), this->_vector.end()) - *std::min_element(this->_vector.begin(), this->_vector.end())); }
+int						Span::longestSpan(){ 
+	if (this->getVectorSize() <= 1)
+		throw std::string("Only one element in vector!");
+	return (std::abs(*std::max_element(this->_vector.begin(), this->_vector.end()) - *std::min_element(this->_vector.begin(), this->_vector.end()))); 
+}
 
 int						Span::shortestSpan(){
+	if (this->getVectorSize() <= 1)
+		throw std::string("Only one element in vector!");
+	this->sortVector();
 	std::vector<int>::iterator begin = this->_vector.begin();
 	std::vector<int>::iterator end = this->_vector.end();
 	int			shortest;
 	int			tmp;
 
 	shortest = std::abs(std::abs(*begin) - std::abs(*(begin + 1)));
-	// std::cout << std::endl << shortest << std::endl;
-	// std::cout << *begin << std::endl;
-	// std::cout << *(begin + 1) << std::endl;
 	while (begin != end){
 		tmp = std::abs(std::abs(*begin) - std::abs(*(begin + 1)));
 		if (tmp < shortest)
