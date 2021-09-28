@@ -74,11 +74,10 @@ unsigned int						Span::shortestSpan(){
 	unsigned int			shortest = UINT_MAX;
 	unsigned int			tmp;
 
-	while (begin != end - 1){
+	while (++begin != end - 1){
 		tmp = static_cast<unsigned int>(*(begin + 1) - *begin);
 		if (tmp < shortest)
 			shortest = tmp;
-		begin++;
 	}
 	return (shortest);
 }
